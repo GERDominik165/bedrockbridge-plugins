@@ -15,7 +15,9 @@ import { Player, system, world } from "@minecraft/server";
 
 const player_stats = new Map();
 
-const afk_scoreboard = world.scoreboard.getObjective("esploratori:afk-time")??world.scoreboard.addObjective("esploratori:afk-time", "afk-time");
+let afk_scoreboard;
+// Deferred: world mutation (addObjective) is not allowed during early module execution.
+system.run(() => { afk_scoreboard = world.scoreboard.getObjective("esploratori:afk-time") ?? world.scoreboard.addObjective("esploratori:afk-time", "afk-time"); });
 
 function distance(v1, v2){// Vector mock as @minecraft/math requires manifest change
     return Math.sqrt((v1.x-v2.x)**2+(v1.y+v2.y)**2+(v1.z+v2.z)**2);
@@ -115,8 +117,8 @@ var time = Date.now();
                 try {
                     const stat = new PlayerStats(player);
                     if (player_stats.get(player.id)?.equals(stat)) {
-                        const total_time = (player.getDynamicProperty(esploratori:afk-time) ?? 0) + interval;
-                        player.setDynamicProperty(esploratori:afk-time, total_time);
+                        const total_time = (player.getDynamicProperty("esploratori:afk-time") ?? 0) + interval;
+                        player.setDynamicProperty("esploratori:afk-time", total_time);
                         afk_scoreboard.setScore(player, Math.floor(total_time/60000));
                     } else {
                         if (player?.hasTag?.(AFK)) player?.removeTag?.(AFK);

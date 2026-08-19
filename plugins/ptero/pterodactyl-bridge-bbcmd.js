@@ -24,6 +24,10 @@
  */
 
 import { world, system, Player } from '@minecraft/server';
+// Bedrock has no global setTimeout; shim to system.runTimeout (20 ticks/s).
+// Note: request.setTimeout(...) is an HttpRequest method and is unaffected by this.
+const setTimeout = (cb, ms) => system.runTimeout(cb, Math.max(1, Math.round((ms || 0) / 50)));
+
 import { http, HttpRequest, HttpRequestMethod } from '@minecraft/server-net';
 import { ActionFormData, MessageFormData, ModalFormData } from '@minecraft/server-ui';
 import { bridge } from '../../addons.js';

@@ -5,7 +5,8 @@
  * @version 4.0.0
  */
 
-import { world, system, BlockVolume, Vector3 } from "@minecraft/server";
+import { world, system, BlockVolume } from "@minecraft/server";
+import { Vector3 } from "../utils/Vector3.js";
 
 export class VisualizerV4 {
     constructor(claimManager) {

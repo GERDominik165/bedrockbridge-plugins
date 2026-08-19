@@ -14,7 +14,8 @@
  */
 
 import { bridge } from '../../addons';
-import { system, world, MinecraftDimensionTypes } from '@minecraft/server';
+import { system, world } from '@minecraft/server';
+const MinecraftDimensionTypes = { overworld:'minecraft:overworld', nether:'minecraft:nether', theEnd:'minecraft:the_end' };
 // import { MinecraftDimensionTypes } from "@minecraft/vanilla-data";
 import { warps } from './warps';
 import { options } from './options';

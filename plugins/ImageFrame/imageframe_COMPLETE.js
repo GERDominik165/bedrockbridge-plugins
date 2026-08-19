@@ -35,9 +35,13 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 
 import { world, system } from "@minecraft/server";
+// Bedrock has no global setTimeout; shim to system.runTimeout (20 ticks/s).
+// Note: request.setTimeout(...) is an HttpRequest method and is unaffected by this.
+const setTimeout = (cb, ms) => system.runTimeout(cb, Math.max(1, Math.round((ms || 0) / 50)));
+
 import { ModalFormData, ActionFormData, MessageFormData } from "@minecraft/server-ui";
 import { HttpRequest, HttpHeader, HttpRequestMethod, http } from "@minecraft/server-net";
-import { bridge, database } from "../addons";
+import { bridge, database } from "../../addons";
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // 2. CONFIGURATION - ALLES HIER ZENTRAL

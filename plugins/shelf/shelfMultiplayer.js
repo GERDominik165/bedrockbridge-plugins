@@ -450,4 +450,4 @@ export class LadderSystem {
     }
 }
 
-export { DuelManager, BracketTournament, ClanManager, LadderSystem };
+
