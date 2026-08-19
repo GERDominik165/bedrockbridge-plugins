@@ -1,0 +1,68 @@
+{
+  "plugin": {
+    "name": "@bedrock-bridge/pterodactyl-plugin",
+    "version": "1.0.0",
+    "enabled": true
+  },
+  "pterodactyl": {
+    "panelUrl": "https://pv-q.de/",
+    "apiKey": "REDACTED",
+    "timeout": 30,
+    "retryAttempts": 3,
+    "retryDelay": 1000,
+    "maxRetryDelay": 10000
+  },
+  "bedrock": {
+    "commandPrefix": "bedrockbridge",
+    "debugMode": true,
+    "monitoringEnabled": true,
+    "serverVersion": "1.21.120"
+  },
+  "features": {
+    "serverManagement": true,
+    "fileManagement": true,
+    "databaseManagement": true,
+    "backupManagement": true,
+    "scheduleManagement": true,
+    "console": true,
+    "monitoring": true,
+    "websocket": true
+  },
+  "cache": {
+    "enabled": true,
+    "defaultTTL": 300000,
+    "serverListTTL": 120000,
+    "serverDetailsTTL": 60000,
+    "resourcesTTL": 30000
+  },
+  "monitoring": {
+    "enabled": true,
+    "interval": 5000,
+    "maxHistorySize": 100,
+    "statsUpdateInterval": 3000
+  },
+  "websocket": {
+    "reconnectAttempts": 5,
+    "reconnectDelay": 2000,
+    "messageQueueSize": 100,
+    "pingInterval": 30000
+  },
+  "ui": {
+    "itemsPerPage": 8,
+    "maxConsoleLines": 100,
+    "formTimeout": 300,
+    "autoRefreshEnabled": true,
+    "autoRefreshInterval": 5000
+  },
+  "rateLimiting": {
+    "requestsPerMinute": 240,
+    "burstRequests": 10,
+    "burstWindow": 1000
+  },
+  "logging": {
+    "level": "INFO",
+    "enableDebug": true,
+    "maxLogSize": 10485760,
+    "maxLogFiles": 5
+  }
+}

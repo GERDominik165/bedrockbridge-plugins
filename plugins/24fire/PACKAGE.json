@@ -1,0 +1,66 @@
+{
+  "name": "24fire-bedrock-bridge",
+  "version": "2.0.0",
+  "description": "Vollständige 24fire REST-API v2 Integration für Bedrock Bridge",
+  "main": "24fire-bridge-complete.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node index.js",
+    "dev": "NODE_ENV=development node index.js"
+  },
+  "keywords": [
+    "24fire",
+    "bedrock",
+    "bridge",
+    "api",
+    "minecraft",
+    "kvm",
+    "domain",
+    "management"
+  ],
+  "author": "24fire Integration Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/24fire/bedrock-bridge-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/24fire/bedrock-bridge-plugin/issues"
+  },
+  "homepage": "https://24fire.de",
+  "dependencies": {},
+  "devDependencies": {
+    "@minecraft/server": "^1.0.0",
+    "@minecraft/server-net": "^1.0.0",
+    "@minecraft/server-ui": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "24fire-bridge-complete.js",
+    "config.json",
+    "README.md",
+    "INSTALLATION.md",
+    "API_REFERENCE.md",
+    "package.json"
+  ],
+  "config": {
+    "api": {
+      "baseUrl": "https://manage.24fire.de",
+      "timeout": 30000
+    }
+  },
+  "features": {
+    "accountManagement": true,
+    "serviceManagement": true,
+    "domainManagement": true,
+    "kvmManagement": true,
+    "backupManagement": true,
+    "trafficMonitoring": true,
+    "donationTracking": true,
+    "affiliateTracking": true,
+    "webspaceManagement": true
+  }
+}

@@ -1,0 +1,47 @@
+/**
+ * Pterodactyl Bedrock Bridge - Logger Utility
+ * Erweiterte Logging-Funktionalität mit verschiedenen Levels
+ */
+
+import { world } from '@minecraft/server';
+import { LOG_LEVELS, Colors } from '../config/Constants';
+
+export class Logger {
+  private static instance: Logger;
+  private logsBuffer: string[] = [];
+  private maxBufferSize = 1000;
+  private debugMode = false;
+
+  private constructor() {}
+
+  static getInstance(): Logger {
+    if (\!Logger.instance) {
+      Logger.instance = new Logger();
+    }
+    return Logger.instance;
+  }
+
+  setDebugMode(enabled: boolean): void {
+    this.debugMode = enabled;
+  }
+
+  debug(message: string, context?: any): void {
+    this.log(LOG_LEVELS.DEBUG, message, context);
+  }
+
+  info(message: string, context?: any): void {
+    this.log(LOG_LEVELS.INFO, message, context);
+  }
+
+  warn(message: string, context?: any): void {
+    this.log(LOG_LEVELS.WARN, message, context);
+  }
+
+  error(message: string, context?: any): void {
+    this.log(LOG_LEVELS.ERROR, message, context);
+  }
+
+  critical(message: string, context?: any): void {
+    this.log(LOG_LEVELS.CRITICAL, message, context);
+  }
+

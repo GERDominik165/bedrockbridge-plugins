@@ -1,0 +1,42 @@
+{
+  "api": {
+    "timeout": 10000,
+    "retries": 3,
+    "retryDelay": 1000,
+    "maxConcurrentRequests": 5,
+    "enabled": true
+  },
+  "cache": {
+    "enabled": true,
+    "ttl": 3600,
+    "maxSize": 1000,
+    "cleanupInterval": 300
+  },
+  "logging": {
+    "enabled": true,
+    "level": "info",
+    "maxHistory": 1000,
+    "logToConsole": true,
+    "logToFile": false
+  },
+  "ui": {
+    "enabled": true,
+    "theme": "default",
+    "showDashboard": true,
+    "autoRefresh": true,
+    "refreshInterval": 5000
+  },
+  "security": {
+    "requireAdminTag": true,
+    "enableSSL": true,
+    "allowSelfSigned": false,
+    "maxRequestSize": 1048576
+  },
+  "features": {
+    "enableRequestHistory": true,
+    "enableStatistics": true,
+    "enableHealthCheck": true,
+    "enablePacketMonitoring": false,
+    "enableAutomaticRetry": true
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "@bedrock-bridge/pterodactyl-plugin",
+  "version": "1.0.0",
+  "description": "Pterodactyl Panel API Integration Plugin für Bedrock Bridge mit vollständigen GUI und WebSocket Support",
+  "main": "dist/Plugin.js",
+  "types": "dist/Plugin.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "dev": "npm run clean && npm run build",
+    "start": "npm run build && node dist/main.js",
+    "test": "node dist/tests/IntegrationTests.js",
+    "test:connection": "node -e \"require('./dist/utils/ConnectionTester').runConnectionTests()\"",
+    "production": "npm run clean && npm run build && npm run test"
+  },
+  "dependencies": {
+    "@minecraft/server": "1.13.0",
+    "@minecraft/server-ui": "1.2.0",
+    "@minecraft/server-net": "1.0.0-beta"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "minecraft",
+    "bedrock",
+    "pterodactyl",
+    "plugin",
+    "api"
+  ],
+  "author": "Bedrock Bridge Team",
+  "license": "MIT"
+}

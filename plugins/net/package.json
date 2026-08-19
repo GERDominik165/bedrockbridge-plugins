@@ -1,0 +1,42 @@
+{
+  "name": "@bridgeplugins/server-net-universal",
+  "version": "1.0.0",
+  "description": "Universal Bedrock server-net integration plugin with comprehensive HTTP capabilities and professional UI",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./core": "./core/index.js",
+    "./net": "./net/index.js",
+    "./handlers": "./handlers/index.js",
+    "./utils": "./utils/index.js",
+    "./ui": "./ui/index.js"
+  },
+  "files": [
+    "index.js",
+    "core/",
+    "net/",
+    "handlers/",
+    "ui/",
+    "utils/",
+    "config/",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "minecraft",
+    "bedrock",
+    "server-net",
+    "http-client",
+    "plugin"
+  ],
+  "author": "BridgePlugins",
+  "license": "MIT",
+  "dependencies": {
+    "@minecraft/server": "^1.21.0",
+    "@minecraft/server-net": "^1.0.0",
+    "@minecraft/server-ui": "^2.0.0"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "plugin": {
+    "name": "Inventory Sync MYSQL",
+    "version": "6.0.0",
+    "enabled": true,
+    "type": "sync"
+  },
+  "mysql": {
+    "host": "db.pavl21.de",
+    "port": 3306,
+    "user": "s2654_bedrock",
+    "password": "YOUR_PASSWORD_HERE",
+    "database": "s2654_bedrock_sync",
+    "connectionLimit": 10,
+    "enableKeepAlive": true
+  },
+  "sync": {
+    "autoSyncInterval": 300,
+    "autoSyncIntervalSeconds": 15,
+    "syncOnPlayerJoin": true,
+    "syncOnPlayerLeave": true,
+    "syncOnDimensionChange": true,
+    "persistDimensionInventories": true,
+    "maxSnapshotsPerPlayer": 100
+  },
+  "features": {
+    "saveInventoryItems": true,
+    "saveHotbar": true,
+    "saveArmor": true,
+    "saveOffhand": true,
+    "saveXpLevel": true,
+    "saveHealth": true,
+    "saveHunger": true,
+    "saveGameMode": true,
+    "savePosition": true,
+    "saveDimension": true,
+    "saveActiveEffects": true,
+    "saveEnchantments": true,
+    "saveCustomNames": true,
+    "saveLore": true,
+    "saveDurability": true
+  },
+  "logging": {
+    "level": "VERBOSE",
+    "toConsole": true,
+    "toDatabase": true,
+    "logTransactions": true,
+    "logErrors": true,
+    "logPerformance": true,
+    "logSystemEvents": true
+  },
+  "performance": {
+    "enableCaching": true,
+    "cacheTTL_ms": 300000,
+    "enableBatching": true,
+    "batchSize": 10,
+    "enableProfiling": true,
+    "healthCheckInterval": 600
+  },
+  "advanced": {
+    "compressionEnabled": false,
+    "encryptionEnabled": false,
+    "backupEnabled": false,
+    "discordIntegration": false,
+    "discordWebhookUrl": null,
+    "maxConcurrentSyncs": 10
+  },
+  "database": {
+    "autoCreateSchema": true,
+    "autoCreateIndexes": true,
+    "autoCleanup": false,
+    "cleanupIntervalDays": 30,
+    "archiveOldSnapshots": false,
+    "archiveAfterDays": 90
+  }
+}

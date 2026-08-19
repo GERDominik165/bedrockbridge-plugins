@@ -1,0 +1,58 @@
+{
+  "api": {
+    "endpoint": "https://api.mcprofile.io",
+    "timeout": 10000,
+    "retries": 3,
+    "enabled": true
+  },
+  "cache": {
+    "enabled": true,
+    "ttl": 3600,
+    "maxSize": 1000,
+    "cleanupOnLeave": true,
+    "cleanupInterval": 300000
+  },
+  "admin": {
+    "tags": [
+      "admin",
+      "operator",
+      "owner"
+    ],
+    "showProfileOnJoin": true,
+    "notifyAdminsOnJoin": true,
+    "logProfileAccess": true
+  },
+  "ui": {
+    "enabled": true,
+    "showOnJoin": true,
+    "useActionForm": true,
+    "useModalForm": false,
+    "theme": "default"
+  },
+  "logging": {
+    "enabled": true,
+    "level": "info",
+    "maxHistory": 1000,
+    "enableConsole": true,
+    "enableFile": false
+  },
+  "server": {
+    "name": "MCProfile Server",
+    "version": "2.0.0",
+    "maxPlayers": 10,
+    "motd": "MCProfile Enabled Server"
+  },
+  "features": {
+    "enableJoinNotifications": true,
+    "enableLeaveNotifications": false,
+    "enableProfileCaching": true,
+    "enableCommandLogging": true,
+    "enableAnalytics": false
+  },
+  "security": {
+    "requireAdminTag": true,
+    "enforceSSL": true,
+    "validateResponses": true,
+    "rateLimit": 100
+  }
+}

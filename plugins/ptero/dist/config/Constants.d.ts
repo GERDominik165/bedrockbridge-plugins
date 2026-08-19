@@ -1,0 +1,251 @@
+/**
+ * Pterodactyl Bedrock Bridge - Constants
+ * Zentrale Konstanten für das gesamte Plugin
+ */
+export declare const COMMAND_PREFIX = "bedrockbridge";
+export declare const LEGACY_PREFIX = "!";
+export declare const Colors: {
+    BLACK: string;
+    DARK_BLUE: string;
+    DARK_GREEN: string;
+    DARK_CYAN: string;
+    DARK_RED: string;
+    PURPLE: string;
+    GOLD: string;
+    GRAY: string;
+    DARK_GRAY: string;
+    BLUE: string;
+    GREEN: string;
+    CYAN: string;
+    RED: string;
+    LIGHT_PURPLE: string;
+    YELLOW: string;
+    WHITE: string;
+    OBFUSCATED: string;
+    BOLD: string;
+    STRIKETHROUGH: string;
+    UNDERLINE: string;
+    ITALIC: string;
+    RESET: string;
+};
+export declare const Icons: {
+    SERVER: string;
+    DATABASE: string;
+    FILE: string;
+    FOLDER: string;
+    BACKUP: string;
+    SCHEDULE: string;
+    SETTINGS: string;
+    USER: string;
+    PLAY: string;
+    STOP: string;
+    RESTART: string;
+    WARNING: string;
+    ERROR: string;
+    SUCCESS: string;
+    INFO: string;
+    ARROW_RIGHT: string;
+    ARROW_LEFT: string;
+    CLOCK: string;
+    CHART: string;
+    UPLOAD: string;
+    DOWNLOAD: string;
+    TRASH: string;
+    LOCK: string;
+    UNLOCK: string;
+    CONSOLE: string;
+};
+export declare const HTTP_DEFAULTS: {
+    TIMEOUT: number;
+    RETRY_ATTEMPTS: number;
+    RETRY_DELAY: number;
+    MAX_RETRY_DELAY: number;
+};
+export declare const CACHE_CONFIG: {
+    ENABLED: boolean;
+    DEFAULT_TTL: number;
+    SERVER_LIST_TTL: number;
+    SERVER_DETAILS_TTL: number;
+    RESOURCES_TTL: number;
+    FILES_TTL: number;
+    DATABASE_TTL: number;
+    BACKUP_TTL: number;
+    SCHEDULE_TTL: number;
+};
+export declare const MONITORING_CONFIG: {
+    ENABLED: boolean;
+    INTERVAL: number;
+    MAX_HISTORY_SIZE: number;
+    STATS_UPDATE_INTERVAL: number;
+};
+export declare const WEBSOCKET_CONFIG: {
+    RECONNECT_ATTEMPTS: number;
+    RECONNECT_DELAY: number;
+    MESSAGE_QUEUE_SIZE: number;
+    PING_INTERVAL: number;
+};
+export declare const UI_CONFIG: {
+    ITEMS_PER_PAGE: number;
+    MAX_CONSOLE_LINES: number;
+    FORM_TIMEOUT: number;
+    AUTO_REFRESH_ENABLED: boolean;
+    AUTO_REFRESH_INTERVAL: number;
+};
+export declare const PERMISSIONS: {
+    ADMIN: string;
+    USER: string;
+    VIEWER: string;
+    CONSOLE: string;
+    FILES: string;
+    DATABASE: string;
+    BACKUP: string;
+    SCHEDULE: string;
+    POWER: string;
+};
+export declare const SERVER_STATES: {
+    RUNNING: string;
+    STARTING: string;
+    STOPPING: string;
+    OFFLINE: string;
+    INSTALLING: string;
+    TRANSFERRING: string;
+    SUSPENDED: string;
+    UNKNOWN: string;
+};
+export declare const POWER_ACTIONS: {
+    START: string;
+    STOP: string;
+    RESTART: string;
+    KILL: string;
+};
+export declare const FILE_OPERATIONS: {
+    LIST: string;
+    READ: string;
+    WRITE: string;
+    CREATE: string;
+    DELETE: string;
+    RENAME: string;
+    COPY: string;
+    COMPRESS: string;
+    DECOMPRESS: string;
+    UPLOAD: string;
+    DOWNLOAD: string;
+};
+export declare const SCHEDULE_ACTIONS: {
+    COMMAND: string;
+    POWER: string;
+    BACKUP: string;
+};
+export declare const API_ENDPOINTS: {
+    CLIENT_BASE: string;
+    SERVERS: string;
+    SERVER_DETAILS: (id: string) => string;
+    RESOURCES: (id: string) => string;
+    POWER: (id: string) => string;
+    COMMAND: (id: string) => string;
+    WEBSOCKET: (id: string) => string;
+    FILES_LIST: (id: string, dir?: string) => string;
+    FILES_CONTENTS: (id: string, file: string) => string;
+    FILES_WRITE: (id: string, file: string) => string;
+    FILES_UPLOAD: (id: string, dir?: string) => string;
+    FILES_DELETE: (id: string) => string;
+    FILES_CREATE_FOLDER: (id: string) => string;
+    FILES_RENAME: (id: string) => string;
+    FILES_COMPRESS: (id: string) => string;
+    FILES_DECOMPRESS: (id: string) => string;
+    FILES_CHMOD: (id: string) => string;
+    DATABASES: (id: string) => string;
+    DATABASE_DETAILS: (id: string, dbId: string) => string;
+    DATABASE_ROTATE_PASSWORD: (id: string, dbId: string) => string;
+    BACKUPS: (id: string) => string;
+    BACKUP_DETAILS: (id: string, backupId: string) => string;
+    BACKUP_DOWNLOAD: (id: string, backupId: string) => string;
+    BACKUP_RESTORE: (id: string, backupId: string) => string;
+    BACKUP_LOCK: (id: string, backupId: string) => string;
+    SCHEDULES: (id: string) => string;
+    SCHEDULE_DETAILS: (id: string, schedId: number) => string;
+    SCHEDULE_EXECUTE: (id: string, schedId: number) => string;
+    SCHEDULE_TASKS: (id: string, schedId: number) => string;
+    ALLOCATIONS: (id: string) => string;
+    ALLOCATION_PRIMARY: (id: string, allocId: number) => string;
+    USERS: (id: string) => string;
+    USER_DETAILS: (id: string, userId: string) => string;
+    ACCOUNT: string;
+    ACCOUNT_ACTIVITY: string;
+    ACCOUNT_API_KEYS: string;
+};
+export declare const ERROR_MESSAGES: {
+    INVALID_SERVER_ID: string;
+    SERVER_NOT_FOUND: string;
+    UNAUTHORIZED: string;
+    FORBIDDEN: string;
+    NETWORK_ERROR: string;
+    TIMEOUT: string;
+    INVALID_REQUEST: string;
+    SERVER_ERROR: string;
+    WEBSOCKET_ERROR: string;
+    INVALID_CREDENTIALS: string;
+    API_ERROR: string;
+    RATE_LIMIT: string;
+    FILE_NOT_FOUND: string;
+    DISK_FULL: string;
+    PERMISSION_DENIED: string;
+};
+export declare const SUCCESS_MESSAGES: {
+    SERVER_STARTED: string;
+    SERVER_STOPPED: string;
+    SERVER_RESTARTED: string;
+    COMMAND_SENT: string;
+    DATABASE_CREATED: string;
+    DATABASE_DELETED: string;
+    PASSWORD_ROTATED: string;
+    BACKUP_CREATED: string;
+    BACKUP_RESTORED: string;
+    FILE_UPLOADED: string;
+    FILE_DELETED: string;
+    SETTINGS_SAVED: string;
+};
+export declare const LOG_LEVELS: {
+    DEBUG: string;
+    INFO: string;
+    WARN: string;
+    ERROR: string;
+    CRITICAL: string;
+};
+export declare const GUI_STRINGS: {
+    TITLE_MAIN: string;
+    TITLE_SERVERS: string;
+    TITLE_CONSOLE: string;
+    TITLE_FILES: string;
+    TITLE_DATABASE: string;
+    TITLE_BACKUPS: string;
+    TITLE_SCHEDULES: string;
+    TITLE_SETTINGS: string;
+    BUTTON_START: string;
+    BUTTON_STOP: string;
+    BUTTON_RESTART: string;
+    BUTTON_KILL: string;
+    BUTTON_REFRESH: string;
+    BUTTON_BACK: string;
+    BUTTON_CREATE: string;
+    BUTTON_DELETE: string;
+    BUTTON_EDIT: string;
+    BUTTON_SAVE: string;
+    BUTTON_CANCEL: string;
+};
+export declare const VALIDATION: {
+    MIN_SERVER_NAME_LENGTH: number;
+    MAX_SERVER_NAME_LENGTH: number;
+    MIN_PASSWORD_LENGTH: number;
+    MAX_PASSWORD_LENGTH: number;
+    MIN_DATABASE_NAME_LENGTH: number;
+    MAX_DATABASE_NAME_LENGTH: number;
+    ALLOWED_FILE_EXTENSIONS: string[];
+    MAX_FILE_SIZE: number;
+};
+export declare const RATE_LIMITS: {
+    REQUESTS_PER_MINUTE: number;
+    BURST_REQUESTS: number;
+    BURST_WINDOW: number;
+};
+//# sourceMappingURL=Constants.d.ts.map

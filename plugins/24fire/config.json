@@ -1,0 +1,108 @@
+{
+  "plugin": {
+    "name": "24fire Bedrock Bridge",
+    "version": "2.0.0",
+    "author": "24fire Integration Team",
+    "description": "Vollständige 24fire REST-API v2 Integration für Bedrock Bridge",
+    "enabled": true
+  },
+  "api": {
+    "baseUrl": "https://manage.24fire.de",
+    "apiKey": "",
+    "timeout": 30000,
+    "retryAttempts": 3,
+    "retryDelay": 1000,
+    "endpoints": {
+      "account": "/api/account",
+      "services": "/api/account/services",
+      "donations": "/api/account/donations",
+      "affiliate": "/api/account/affiliate",
+      "domain": "/api/domain",
+      "kvm": "/api/kvm",
+      "webspace": "/api/webspace"
+    }
+  },
+  "cache": {
+    "enabled": true,
+    "ttl": 300000,
+    "maxSize": 100
+  },
+  "rateLimit": {
+    "enabled": true,
+    "limit": 120,
+    "window": 60000
+  },
+  "commands": {
+    "menu": "24fire",
+    "cooldown": 10000,
+    "maxListItems": 20
+  },
+  "ui": {
+    "colors": {
+      "primary": "§6",
+      "success": "§a",
+      "error": "§c",
+      "warning": "§e",
+      "info": "§b",
+      "debug": "§9",
+      "reset": "§r"
+    },
+    "icons": {
+      "account": "👤",
+      "server": "🖥️",
+      "domain": "🌐",
+      "dns": "📡",
+      "backup": "💾",
+      "service": "⚙️",
+      "donation": "💝",
+      "affiliate": "🤝",
+      "webspace": "📁",
+      "kvm": "💻",
+      "success": "✅",
+      "error": "❌",
+      "warning": "⚠️",
+      "loading": "⏳",
+      "back": "⬅️",
+      "refresh": "🔃",
+      "traffic": "📊",
+      "monitoring": "📈"
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "console": true,
+    "file": false,
+    "filePath": "./logs/24fire.log"
+  },
+  "features": {
+    "accountManagement": true,
+    "serviceManagement": true,
+    "domainManagement": true,
+    "dnsManagement": true,
+    "kvmManagement": true,
+    "backupManagement": true,
+    "trafficMonitoring": true,
+    "donationTracking": true,
+    "affiliateTracking": true,
+    "webspaceManagement": true,
+    "ddosProtection": true,
+    "monitoring": true
+  },
+  "permissions": {
+    "requireAdmin": false,
+    "requireOP": false,
+    "allowAllPlayers": true
+  },
+  "security": {
+    "validateSSL": true,
+    "encryptApiKey": false,
+    "ipWhitelist": [],
+    "ipBlacklist": []
+  },
+  "integrations": {
+    "bedrock": true,
+    "discord": false,
+    "webhook": false,
+    "database": false
+  }
+}

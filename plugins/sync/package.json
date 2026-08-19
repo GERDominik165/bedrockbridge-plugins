@@ -1,0 +1,33 @@
+{
+  "name": "inventory-sync-api-server",
+  "version": "8.0.0",
+  "description": "Node.js API Server für Minecraft Bedrock Inventory Sync System",
+  "main": "nodejs-api-server.js",
+  "scripts": {
+    "start": "node nodejs-api-server.js",
+    "dev": "nodemon nodejs-api-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "minecraft",
+    "bedrock",
+    "sync",
+    "inventory",
+    "api"
+  ],
+  "author": "Sync Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
