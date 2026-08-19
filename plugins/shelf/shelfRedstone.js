@@ -362,7 +362,7 @@ const comparatorSystem = new ComparatorSystem();
 const hopperSystem = new HopperIntegrationSystem();
 
 // Überwache Block-Platzierungen
-world.afterEvents.blockPlace.subscribe((event) => {
+world.afterEvents.playerPlaceBlock.subscribe((event) => {
     if (shelfMonitor.isShelf(event.block)) {
         const machineKey = `machine_${event.block.x}_${event.block.y}_${event.block.z}`;
         // Neue Gambling Machine wenn Shelf platziert wird
@@ -371,7 +371,7 @@ world.afterEvents.blockPlace.subscribe((event) => {
 });
 
 // Überwache Block-Zerstörung
-world.afterEvents.blockBreak.subscribe((event) => {
+world.afterEvents.playerBreakBlock.subscribe((event) => {
     if (shelfMonitor.isShelf(event.brokenBlockPermutation.type)) {
         const key = `${event.block.x}_${event.block.y}_${event.block.z}`;
         shelfMonitor.shelfRegistry.delete(key);

@@ -374,7 +374,7 @@ function registerEventListeners() {
         });
 
         // Block-Interaktion
-        world.afterEvents.blockBreak.subscribe((event) => {
+        world.afterEvents.playerBreakBlock.subscribe((event) => {
             try {
                 if (shelfMonitor.isShelf(event.brokenBlockPermutation.type)) {
                     const key = `${event.block.x}_${event.block.y}_${event.block.z}`;
@@ -599,7 +599,7 @@ function registerBridgeCommands() {
 /*                        MAIN PLUGIN INITIALIZATION                        */
 /* ========================================================================= */
 
-world.afterEvents.worldInitialize.subscribe(() => {
+system.run(() => {
     system.run(async () => {
         await initializePlugin();
     });
