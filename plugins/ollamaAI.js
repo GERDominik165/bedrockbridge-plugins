@@ -1,9 +1,9 @@
 /**
- * ollamaAI @version 1.0.0 - BedrockBridge Plugin
+ * ollamaAI @version 1.1.0 - BedrockBridge Plugin
  *
  * In-game AI assistant powered by a self-hosted Ollama instance.
- * Players type "!ai <question>" in chat -> answer shown in-game + posted to Discord.
- * Free, unlimited, no external API and no cost.
+ * Uses the BedrockBridge custom command system: !ai <question>
+ * Free, unlimited, no external API. Answer is shown in-game + posted to Discord.
  */
 import { world, system } from "@minecraft/server";
 import { http, HttpRequest, HttpRequestMethod, HttpHeader } from "@minecraft/server-net";
@@ -11,28 +11,34 @@ import { bridge } from "../addons";
 import { bridgeDirect } from "../BridgeDirect";
 
 // ===== CONFIG =====
-const OLLAMA_URL = "http://10.8.0.100:11434/api/generate"; // self-hosted Ollama (private VPN)
+const OLLAMA_URL = "http://10.8.0.100:11434/api/generate";
 const MODEL      = "huihui_ai/llama3.2-abliterate:latest";
-const PREFIX     = "!ai";
 const MAX_TOKENS = 120;
 const SYSTEM_PROMPT = "You are the AI of a Minecraft Bedrock server. Answer SHORT (max 2 sentences), friendly, in the player's language. No markdown, no code blocks.";
 
-// Enable Discord direct messages (for sendEmbed)
 bridge.events.bridgeInitialize.subscribe(e => e.registerAddition("discord_direct"));
 
-let busy = false; // only one request at a time (CPU friendly)
+let busy = false;
 
-world.beforeEvents.chatSend.subscribe(ev => {
-  const msg = ev.message ?? "";
-  if (!msg.toLowerCase().startsWith(PREFIX.toLowerCase() + " ")) return;
-  ev.cancel = true; // do not broadcast the raw command
-  const player = ev.sender;
-  const prompt = msg.slice(PREFIX.length).trim();
-  system.run(() => askAI(player, prompt));
-});
+// Register "!ai" via BedrockBridge's custom command system (NOT a native / slash command)
+function _registerWhenReady(tries) {
+  tries = tries || 0;
+  if (bridge && bridge.bedrockCommands) {
+    bridge.bedrockCommands.registerCommand("ai", (player, ...args) => {
+      const prompt = args.map(a => String(a)).join(" ").trim();
+      askAI(player, prompt);
+    }, "Ask the server AI a question (powered by a local Ollama instance)");
+    console.warn("[ollamaAI] command !ai registered - model: " + MODEL);
+  } else if (tries < 200) {
+    system.runTimeout(() => _registerWhenReady(tries + 1), 5);
+  } else {
+    console.warn("[ollamaAI] bridge.bedrockCommands never became ready");
+  }
+}
+_registerWhenReady();
 
 async function askAI(player, prompt) {
-  if (!prompt) { player.sendMessage("§e[AI] §7Usage: §f" + PREFIX + " <your question>"); return; }
+  if (!prompt) { player.sendMessage("§e[AI] §7Usage: §f!ai <your question>"); return; }
   if (busy) { player.sendMessage("§e[AI] §7I'm already thinking - try again in a moment."); return; }
   busy = true;
   world.sendMessage("§b[AI] §7" + player.name + " asks: §f" + prompt);
@@ -61,5 +67,3 @@ async function askAI(player, prompt) {
     console.warn("[ollamaAI] " + err);
   } finally { busy = false; }
 }
-
-console.warn("[ollamaAI] loaded - model: " + MODEL);
