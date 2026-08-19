@@ -6,7 +6,7 @@
  * Visual and audio actions for mobs (emotes, animations, sounds)
  */
 
-import { world, system, Vector3 } from "@minecraft/server";
+import { world, system } from "@minecraft/server";
 import { getMobPersonality } from "./mobPersonality.js";
 
 /**
