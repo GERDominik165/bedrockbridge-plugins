@@ -48,4 +48,4 @@ class MainDashboard {
     }
 }
 
-module.exports = MainDashboard;
+export default MainDashboard;

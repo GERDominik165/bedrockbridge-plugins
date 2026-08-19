@@ -233,4 +233,4 @@ class ClanTagManager {
     }
 }
 
-module.exports = ClanTagManager;
+export default ClanTagManager;

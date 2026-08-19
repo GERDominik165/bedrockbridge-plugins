@@ -32,4 +32,4 @@ class LogViewer {
     }
 }
 
-module.exports = LogViewer;
+export default LogViewer;

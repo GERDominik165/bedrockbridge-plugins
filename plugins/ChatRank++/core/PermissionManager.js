@@ -53,4 +53,4 @@ class PermissionManager {
     }
 }
 
-module.exports = PermissionManager;
+export default PermissionManager;

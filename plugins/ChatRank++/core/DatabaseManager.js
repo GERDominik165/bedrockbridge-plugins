@@ -1,3 +1,4 @@
+import { world } from "@minecraft/server";
 /**
  * DatabaseManager - Persistent data storage
  */
@@ -34,13 +35,13 @@ class DatabaseManager {
     }
 
     async save() {
-        // In real implementation, would save to file/database
+        try { world.setDynamicProperty('chatrankpp:db', this.exportData()); } catch (e) {}
         this.lastSave = Date.now();
         return true;
     }
 
     async load() {
-        // In real implementation, would load from file/database
+        try { const raw = world.getDynamicProperty('chatrankpp:db'); if (typeof raw === 'string' && raw) this.importData(raw); } catch (e) {}
         return true;
     }
 
@@ -59,4 +60,4 @@ class DatabaseManager {
     }
 }
 
-module.exports = DatabaseManager;
+export default DatabaseManager;

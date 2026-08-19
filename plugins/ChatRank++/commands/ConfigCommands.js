@@ -44,4 +44,4 @@ class ConfigCommands {
     }
 }
 
-module.exports = ConfigCommands;
+export default ConfigCommands;

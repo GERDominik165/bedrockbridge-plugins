@@ -37,4 +37,4 @@ class StatsViewer {
     }
 }
 
-module.exports = StatsViewer;
+export default StatsViewer;

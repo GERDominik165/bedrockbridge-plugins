@@ -55,4 +55,4 @@ class FilterCommands {
     }
 }
 
-module.exports = FilterCommands;
+export default FilterCommands;

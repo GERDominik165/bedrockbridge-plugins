@@ -163,4 +163,4 @@ class PlayerInfoManager {
     }
 }
 
-module.exports = PlayerInfoManager;
+export default PlayerInfoManager;

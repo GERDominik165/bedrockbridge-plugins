@@ -61,4 +61,4 @@ class AdminCommands {
     }
 }
 
-module.exports = AdminCommands;
+export default AdminCommands;

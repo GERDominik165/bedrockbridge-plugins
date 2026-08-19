@@ -3,7 +3,7 @@
  * Plugin configuration and metadata
  */
 
-module.exports = {
+export default {
     name: 'ChatRank++',
     version: '2.0.0',
     description: 'Complete chat ranking and management system for BedrockBridge',

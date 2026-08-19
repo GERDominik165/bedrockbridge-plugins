@@ -255,4 +255,4 @@ class RankManager {
     }
 }
 
-module.exports = RankManager;
+export default RankManager;

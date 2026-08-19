@@ -41,4 +41,4 @@ class AdvancedCooldownManager {
     }
 }
 
-module.exports = AdvancedCooldownManager;
+export default AdvancedCooldownManager;

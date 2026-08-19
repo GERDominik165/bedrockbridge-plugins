@@ -158,4 +158,4 @@ class MuteManager {
     }
 }
 
-module.exports = MuteManager;
+export default MuteManager;

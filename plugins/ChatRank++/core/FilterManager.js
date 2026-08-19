@@ -73,4 +73,4 @@ class FilterManager {
     }
 }
 
-module.exports = FilterManager;
+export default FilterManager;

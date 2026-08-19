@@ -6,7 +6,7 @@
 // Import BedrockBridge modules (these would be provided by BedrockBridge)
 // This is a wrapper to handle imports correctly
 
-module.exports = {
+export default {
     // Event system
     EventEmitter: null,
 

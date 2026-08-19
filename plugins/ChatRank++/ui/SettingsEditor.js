@@ -95,4 +95,4 @@ class SettingsEditor {
     }
 }
 
-module.exports = SettingsEditor;
+export default SettingsEditor;

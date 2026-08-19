@@ -47,4 +47,4 @@ class StatsCommands {
     }
 }
 
-module.exports = StatsCommands;
+export default StatsCommands;

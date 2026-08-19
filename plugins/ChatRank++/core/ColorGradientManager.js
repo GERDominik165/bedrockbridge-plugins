@@ -38,4 +38,4 @@ class ColorGradientManager {
     }
 }
 
-module.exports = ColorGradientManager;
+export default ColorGradientManager;

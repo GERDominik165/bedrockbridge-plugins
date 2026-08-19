@@ -25,4 +25,4 @@ class FilterManagerUI {
     }
 }
 
-module.exports = FilterManagerUI;
+export default FilterManagerUI;

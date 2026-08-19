@@ -35,4 +35,4 @@ class HealthDisplayManager {
     }
 }
 
-module.exports = HealthDisplayManager;
+export default HealthDisplayManager;

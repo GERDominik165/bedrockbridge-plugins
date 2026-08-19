@@ -45,4 +45,4 @@ class StatsManager {
     }
 }
 
-module.exports = StatsManager;
+export default StatsManager;

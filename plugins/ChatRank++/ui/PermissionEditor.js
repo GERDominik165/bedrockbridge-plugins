@@ -24,4 +24,4 @@ class PermissionEditor {
     }
 }
 
-module.exports = PermissionEditor;
+export default PermissionEditor;

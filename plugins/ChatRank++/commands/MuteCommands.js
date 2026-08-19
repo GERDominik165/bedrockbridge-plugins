@@ -68,4 +68,4 @@ class MuteCommands {
     }
 }
 
-module.exports = MuteCommands;
+export default MuteCommands;

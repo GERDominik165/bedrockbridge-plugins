@@ -101,4 +101,4 @@ class RankCommands {
     }
 }
 
-module.exports = RankCommands;
+export default RankCommands;

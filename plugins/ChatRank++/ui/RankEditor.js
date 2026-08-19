@@ -82,4 +82,4 @@ class RankEditor {
     }
 }
 
-module.exports = RankEditor;
+export default RankEditor;

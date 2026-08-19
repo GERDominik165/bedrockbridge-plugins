@@ -170,4 +170,4 @@ class CustomNameManager {
     }
 }
 
-module.exports = CustomNameManager;
+export default CustomNameManager;

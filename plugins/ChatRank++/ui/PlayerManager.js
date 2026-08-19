@@ -74,4 +74,4 @@ class PlayerManager {
     }
 }
 
-module.exports = PlayerManager;
+export default PlayerManager;

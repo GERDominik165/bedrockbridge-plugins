@@ -38,4 +38,4 @@ class HideVisibilityManager {
     }
 }
 
-module.exports = HideVisibilityManager;
+export default HideVisibilityManager;

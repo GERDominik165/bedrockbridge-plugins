@@ -109,4 +109,4 @@ class ClanCommands {
     }
 }
 
-module.exports = ClanCommands;
+export default ClanCommands;

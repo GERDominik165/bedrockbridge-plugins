@@ -56,4 +56,4 @@ class NameCommands {
     }
 }
 
-module.exports = NameCommands;
+export default NameCommands;

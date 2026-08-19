@@ -5,33 +5,35 @@
  */
 
 // Import all core managers
-const RankManager = require('./core/RankManager');
-const ChatFormatter = require('./core/ChatFormatter');
-const PlayerInfoManager = require('./core/PlayerInfoManager');
-const MuteManager = require('./core/MuteManager');
-const ClanTagManager = require('./core/ClanTagManager');
-const CustomNameManager = require('./core/CustomNameManager');
-const HideVisibilityManager = require('./core/HideVisibilityManager');
-const HealthDisplayManager = require('./core/HealthDisplayManager');
-const ColorGradientManager = require('./core/ColorGradientManager');
-const AdvancedCooldownManager = require('./core/AdvancedCooldownManager');
-const NotificationManager = require('./core/NotificationManager');
-const DatabaseManager = require('./core/DatabaseManager');
-const StatsManager = require('./core/StatsManager');
-const FilterManager = require('./core/FilterManager');
-const PermissionManager = require('./core/PermissionManager');
-const LogManager = require('./core/LogManager');
-const ConfigManager = require('./core/ConfigManager');
+import RankManager from './core/RankManager.js';
+import { system } from "@minecraft/server";
+const setInterval = (cb, ms) => system.runInterval(cb, Math.max(1, Math.round((ms || 0) / 50)));
+import ChatFormatter from './core/ChatFormatter.js';
+import PlayerInfoManager from './core/PlayerInfoManager.js';
+import MuteManager from './core/MuteManager.js';
+import ClanTagManager from './core/ClanTagManager.js';
+import CustomNameManager from './core/CustomNameManager.js';
+import HideVisibilityManager from './core/HideVisibilityManager.js';
+import HealthDisplayManager from './core/HealthDisplayManager.js';
+import ColorGradientManager from './core/ColorGradientManager.js';
+import AdvancedCooldownManager from './core/AdvancedCooldownManager.js';
+import NotificationManager from './core/NotificationManager.js';
+import DatabaseManager from './core/DatabaseManager.js';
+import StatsManager from './core/StatsManager.js';
+import FilterManager from './core/FilterManager.js';
+import PermissionManager from './core/PermissionManager.js';
+import LogManager from './core/LogManager.js';
+import ConfigManager from './core/ConfigManager.js';
 
 // Import command handlers
-const RankCommands = require('./commands/RankCommands');
-const MuteCommands = require('./commands/MuteCommands');
-const ClanCommands = require('./commands/ClanCommands');
-const NameCommands = require('./commands/NameCommands');
-const AdminCommands = require('./commands/AdminCommands');
-const StatsCommands = require('./commands/StatsCommands');
-const ConfigCommands = require('./commands/ConfigCommands');
-const FilterCommands = require('./commands/FilterCommands');
+import RankCommands from './commands/RankCommands.js';
+import MuteCommands from './commands/MuteCommands.js';
+import ClanCommands from './commands/ClanCommands.js';
+import NameCommands from './commands/NameCommands.js';
+import AdminCommands from './commands/AdminCommands.js';
+import StatsCommands from './commands/StatsCommands.js';
+import ConfigCommands from './commands/ConfigCommands.js';
+import FilterCommands from './commands/FilterCommands.js';
 
 class ChatRankPlusPlus {
     constructor() {
@@ -312,4 +314,4 @@ class ChatRankPlusPlus {
 }
 
 // Export plugin instance
-module.exports = new ChatRankPlusPlus();
+export default new ChatRankPlusPlus();

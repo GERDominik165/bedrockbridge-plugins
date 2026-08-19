@@ -348,4 +348,4 @@ class ChatFormatter {
     }
 }
 
-module.exports = ChatFormatter;
+export default ChatFormatter;

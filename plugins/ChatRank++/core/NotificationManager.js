@@ -67,4 +67,4 @@ class NotificationManager {
     }
 }
 
-module.exports = NotificationManager;
+export default NotificationManager;
