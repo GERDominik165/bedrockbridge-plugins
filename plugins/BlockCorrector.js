@@ -1,28 +1,21 @@
-// development_behavior_packs/Bedrock-Bridge/scripts/bridgePlugins/BlockCorrector.js
+/**
+ * BlockCorrector @version 2.0.0 - BedrockBridge Plugin
+ *
+ * Ported from the legacy module.exports plugin format to BedrockBridge ES modules.
+ * Runs the `safezone/block_corrector` function on every player every 5 seconds
+ * (100 ticks). Original author: RogueGamingHD.
+ */
+import { world, system } from "@minecraft/server";
 
-module.exports = {
-    name: "BlockCorrector",
-    version: "1.0.0",
-    author: "RogueGamingHD",
-    
-    onLoad() {
-        console.log("[BlockCorrector] Plugin loaded!");
-    },
+console.warn("[BlockCorrector] loaded");
 
-    onEnable() {
-        console.log("[BlockCorrector] Plugin enabled!");
-        // Run block correction every 5 seconds
-        this.registerInterval(() => {
-            try {
-                this.runCommand('execute @a ~ ~ ~ function safezone/block_corrector');
-                console.log("[BlockCorrector] Running block correction");
-            } catch (error) {
-                console.error("[BlockCorrector] Error: " + error);
-            }
-        }, 100);
-    },
-
-    onDisable() {
-        console.log("[BlockCorrector] Plugin disabled!");
-    }
-};
+system.runInterval(() => {
+  try {
+    // Modern execute syntax; runs the function at each player's position.
+    world.getDimension("overworld").runCommand(
+      "execute as @a at @s run function safezone/block_corrector"
+    );
+  } catch (error) {
+    console.warn("[BlockCorrector] Error: " + error);
+  }
+}, 100);
