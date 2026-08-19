@@ -51,7 +51,7 @@ Server neustarten und dann:
 ```javascript
 const CONFIG = {
   PANEL_URL: 'https://pv-q.de/',
-  API_KEY: 'REDACTED',
+  API_KEY: 'REDACTED_PVQ_KEY',
   COMMAND_PREFIX: 'bedrockbridge'
 };
 ```

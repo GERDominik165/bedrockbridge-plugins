@@ -221,7 +221,7 @@ Overall Test Coverage: 100% ✅
 ### API Key
 ```
 Panel URL: https://pv-q.de/
-API Key: REDACTED
+API Key: REDACTED_PVQ_KEY
 Secure: Ja (als env variable einsatzbereit)
 ```
 

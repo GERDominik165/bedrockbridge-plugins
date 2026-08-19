@@ -184,7 +184,7 @@ RESET:    §r (Reset)
 ```javascript
 const CONFIG = {
   PANEL_URL: 'https://pv-q.de/',
-  API_KEY: 'REDACTED',
+  API_KEY: 'ptlc_RC7v...',
   MENU_COMMAND: 'pman',
   MENU_COOLDOWN: 10000,         // 10 seconds
   TIMEOUT: 30000,               // 30 seconds

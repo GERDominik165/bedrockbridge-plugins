@@ -37,7 +37,7 @@ import { ActionFormData, MessageFormData, ModalFormData } from '@minecraft/serve
 const CONFIG = {
   // PTERODACTYL PANEL EINSTELLUNGEN
   PANEL_URL: 'https://pv-q.de/',
-  API_KEY: 'REDACTED',
+  API_KEY: 'REDACTED_PVQ_KEY',
 
   // HTTP EINSTELLUNGEN
   TIMEOUT: 30000,           // 30 Sekunden
@@ -125,7 +125,7 @@ class Logger {
 class PterodactylClient {
   constructor() {
     this.baseUrl = CONFIG.PANEL_URL.replace(/\/$/, '');
-    this.apiKey = REDACTED
+    this.apiKey = CONFIG.API_KEY;
     this.requestCount = 0;
     this.windowStart = Date.now();
     this.cache = new Map();

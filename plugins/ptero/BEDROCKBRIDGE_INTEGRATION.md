@@ -289,7 +289,7 @@ Edit the CONFIG section in `pterodactyl.js` (lines 37-65):
 const CONFIG = {
   // PTERODACTYL PANEL
   PANEL_URL: 'https://pv-q.de/',
-  API_KEY: 'REDACTED',
+  API_KEY: 'REDACTED_PVQ_KEY',
 
   // HTTP SETTINGS
   TIMEOUT: 30000,                    // 30 seconds

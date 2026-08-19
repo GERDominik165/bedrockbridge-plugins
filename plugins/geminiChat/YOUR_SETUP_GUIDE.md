@@ -9,7 +9,7 @@
 Ihr **API-Key wurde bereits konfiguriert!**
 
 ```
-API Key: REDACTED_GEMINI_API_KEY
+API Key: REDACTED_GEMINI_KEY
 Status: ✓ Aktiv
 Plan: Kostenlose Stufe (60 Anfragen/Minute)
 ```

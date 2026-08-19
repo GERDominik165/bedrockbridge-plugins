@@ -402,7 +402,7 @@ const RELATIONSHIP_LEVELS = {
 const DEFAULTS = {
     // System Settings
     pluginEnabled: true,
-    apiKey: "REDACTED",
+    apiKey: "REDACTED_GEMINI_KEY",
     modelName: "gemini-flash-latest",
     apiUrl: "https://generativelanguage.googleapis.com/v1beta/models",
 
@@ -546,7 +546,7 @@ export function getRelationshipLevel(trustValue) {
  * Validate API key is configured
  */
 export function isApiKeyConfigured() {
-    const apiKey = REDACTED"apiKey");
+    const apiKey = getConfig("apiKey");
     return apiKey && apiKey !== "YOUR_GEMINI_API_KEY_HERE";
 }
 
@@ -555,7 +555,7 @@ export function isApiKeyConfigured() {
  */
 export function getApiEndpoint() {
     const modelName = getConfig("modelName");
-    const apiKey = REDACTED"apiKey");
+    const apiKey = getConfig("apiKey");
     return `${getConfig("apiUrl")}/${modelName}:generateContent?key=${apiKey}`;
 }
 

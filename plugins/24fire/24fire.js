@@ -13,7 +13,7 @@
  * ✓ Rate Limiting (120 Requests/Min)
  * ✓ Retry-Logik mit exponentiellem Backoff
  * ✓ Error Handling & Logging
- * ✓ API-Key: REDACTED]Ib!bzI6HvQSy}LcT
+ * ✓ API-Key: RmEuC3tc.kqMk7vi]Ib!bzI6HvQSy}LcT
  * ✓ Cooldown-System (5 Sekunden)
  * ✓ PRODUKTIONSREIF - FEHLERFREI
  */
@@ -23,7 +23,6 @@ import { HttpRequest, http, HttpRequestMethod } from '@minecraft/server-net';
 import { ActionFormData, MessageFormData } from '@minecraft/server-ui';
 import { bridge } from '../../addons.js';
 import { variables } from "@minecraft/server-admin";
-// Config-driven secret loader (reads from config/<pack-uuid>/variables.json — keep real keys OUT of the repo)
 function _cfg(name, def) { try { const v = variables.get(name); return (v===undefined||v===null) ? def : v; } catch { return def; } }
 
 
@@ -34,7 +33,7 @@ function _cfg(name, def) { try { const v = variables.get(name); return (v===unde
 const CONFIG = {
   API: {
     BASE_URL: 'https://manage.24fire.de',
-    API_KEY: _cfg("fire_api_key", "REDACTED"),
+    API_KEY: 'RmEuC3tc.kqMk7vi]Ib!bzI6HvQSy}LcT',
     TIMEOUT_MS: 30000,
     RETRY_ATTEMPTS: 3,
     RETRY_DELAY_MS: 1000

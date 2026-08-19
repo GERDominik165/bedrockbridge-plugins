@@ -85,7 +85,7 @@ CONFIGURATION:
 File: pterodactyl-bridge.js (lines 37-65)
 
 PANEL_URL: https://pv-q.de/
-API_KEY: REDACTED
+API_KEY: REDACTED_PVQ_KEY
 
 Other settings:
   - TIMEOUT: 30 seconds

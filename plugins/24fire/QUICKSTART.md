@@ -34,7 +34,7 @@ README.md
 Mit:
 
 ```json
-"apiKey": "REDACTED"
+"apiKey": "ptlc_ABC123XYZ789..."
 ```
 
 ## 🚀 Schritt 3: Plugin aktivieren (30 Sekunden)
@@ -148,10 +148,10 @@ In `config.json`:
 ```json
 // Falsch:
 "apiKey": ""
-"apiKey": "REDACTED"
+"apiKey": "YOUR_API_KEY_HERE"
 
 // Richtig:
-"apiKey": "REDACTED"
+"apiKey": "ptlc_ABC123..."
 ```
 
 ### ❌ Menü öffnet sich nicht

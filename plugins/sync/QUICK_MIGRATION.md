@@ -73,7 +73,7 @@ Wenn alle Checks grün sind: **MySQL ist produktiv!**
 **Lösung:**
 ```sql
 -- Verbindung manuell prüfen
-mysql -h db.pavl21.de -u u2654_ml0hZ8Ntyf -p REDACTED
+mysql -h db.pavl21.de -u u2654_ml0hZ8Ntyf -p REDACTED_DB_PASSWORD
 USE s2654_bedrock_sync;
 SHOW TABLES;
 

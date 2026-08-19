@@ -129,7 +129,7 @@ crossServerSync_mysql.js
 Host:     db.pavl21.de:3306
 Database: s2654_bedrock_sync
 User:     u2654_ml0hZ8Ntyf
-Password: REDACTED
+Password: REDACTED_DB_PASSWORD
 ```
 
 ### Was wird automatisch erstellt?
@@ -308,7 +308,7 @@ SELECT * FROM system_logs WHERE level = 'error';
 **Schritt 2:** Überprüfe Verbindung
 ```bash
 mysql -h db.pavl21.de -u u2654_ml0hZ8Ntyf -p
-# Passwort: REDACTED
+# Passwort: REDACTED_DB_PASSWORD
 ```
 
 **Schritt 3:** Analysiere Logs

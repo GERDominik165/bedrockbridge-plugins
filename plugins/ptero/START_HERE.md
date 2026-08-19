@@ -128,7 +128,7 @@ Alles funktioniert mit deinem **echten API-Key** vom Panel:
 
 ```
 Panel URL: https://pv-q.de/
-API Key: REDACTED
+API Key: REDACTED_PVQ_KEY
 ```
 
 ### Server Management

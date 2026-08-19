@@ -21,7 +21,7 @@ class MySQLPool {
       host: config.host || "db.pavl21.de",
       port: config.port || 3306,
       user: config.user || "s2654_bedrock",
-      password: REDACTED || "",
+      password: config.password || "",
       database: config.database || "s2654_bedrock_sync",
       connectionLimit: 10,
       waitForConnections: true,

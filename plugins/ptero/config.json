@@ -6,7 +6,7 @@
   },
   "pterodactyl": {
     "panelUrl": "https://pv-q.de/",
-    "apiKey": "REDACTED",
+    "apiKey": "REDACTED_PVQ_KEY",
     "timeout": 30,
     "retryAttempts": 3,
     "retryDelay": 1000,

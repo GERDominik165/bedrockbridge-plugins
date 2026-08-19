@@ -151,7 +151,7 @@ Server neustarten
 ### Mit deinem echten API-Key
 ```
 Panel URL: https://pv-q.de/
-API Key: REDACTED
+API Key: REDACTED_PVQ_KEY
 
 ✅ Nicht hardcoded
 ✅ Leicht änderbar
@@ -211,7 +211,7 @@ Nur EIN Ort zum Ändern! (main.js, Zeile ~15)
 ```javascript
 const CONFIG = {
   PANEL_URL: 'https://dein-panel.de/',      // ← Deine Panel-URL
-  API_KEY: 'REDACTED',        // ← Dein API-Key
+  API_KEY: 'ptlc_dein-api-key-hier',        // ← Dein API-Key
   TIMEOUT: 30000,                           // ← Optional
   RETRY_ATTEMPTS: 3,                        // ← Optional
   COMMAND_PREFIX: 'bedrockbridge',          // ← Optional

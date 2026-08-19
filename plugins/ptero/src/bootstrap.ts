@@ -46,7 +46,7 @@ export class PluginBootstrap {
     return {
       // Deine echten Credentials
       panelUrl: 'https://pv-q.de/',
-      apiKey: 'REDACTED',
+      apiKey: 'REDACTED_PVQ_KEY',
 
       // Timeout und Retry-Einstellungen
       timeout: 30,
@@ -132,7 +132,7 @@ export class PluginBootstrap {
   private async testConnection(): Promise<any> {
     const tester = new ConnectionTester({
       panelUrl: this.config.panelUrl,
-      apiKey: REDACTED
+      apiKey: this.config.apiKey,
       timeout: this.config.timeout || 30
     });
 

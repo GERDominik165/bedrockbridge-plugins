@@ -353,8 +353,8 @@ export class Territory {
             fireSpreadProtection: this.fireSpreadProtection,
             fluidFlowProtection: this.fluidFlowProtection,
             publicAccess: this.publicAccess,
-            requirePassword: REDACTED
-            password: REDACTED
+            requirePassword: this.requirePassword,
+            password: this.password,
             whiteListMode: this.whiteListMode,
             allowVisitors: this.allowVisitors,
             features: this.features,
@@ -410,8 +410,8 @@ export class Territory {
             fireSpreadProtection: data.fireSpreadProtection,
             fluidFlowProtection: data.fluidFlowProtection,
             publicAccess: data.publicAccess,
-            requirePassword: REDACTED
-            password: REDACTED
+            requirePassword: data.requirePassword,
+            password: data.password,
             whiteListMode: data.whiteListMode,
             allowVisitors: data.allowVisitors,
             features: data.features || {},

@@ -16,7 +16,7 @@ import { ActionFormData, MessageFormData, ModalFormData } from '@minecraft/serve
 
 const CONFIG = {
   PANEL_URL: 'https://pv-q.de/',
-  API_KEY: 'REDACTED',
+  API_KEY: 'REDACTED_PVQ_KEY',
   TIMEOUT: 30000,
   RETRY_ATTEMPTS: 3,
   COMMAND_PREFIX: 'bedrockbridge',
@@ -78,7 +78,7 @@ const Icons = {
 class PterodactylClient {
   constructor(config) {
     this.panelUrl = config.PANEL_URL.replace(/\/$/, '');
-    this.apiKey = REDACTED
+    this.apiKey = config.API_KEY;
     this.timeout = config.TIMEOUT;
     this.retryAttempts = config.RETRY_ATTEMPTS;
     this.requestCount = 0;
@@ -564,7 +564,7 @@ async function handleSettings(player) {
     `${Colors.YELLOW}Plugin Status:${Colors.RESET}\n` +
     `├ Initialisiert: ${plugin.isInitialized ? Colors.GREEN + 'Ja' : Colors.RED + 'Nein'}${Colors.RESET}\n` +
     `├ Panel: ${CONFIG.PANEL_URL}\n` +
-    `└ API-Key: REDACTED 10)}...${Colors.RESET}\n`;
+    `└ API-Key: ${CONFIG.API_KEY.substring(0, 10)}...${Colors.RESET}\n`;
 
   await GUIBuilder.showError(player, 'Einstellungen', message);
 }

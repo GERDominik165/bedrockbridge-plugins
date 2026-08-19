@@ -236,7 +236,7 @@ Alle Pterodactyl API-Funktionen sind implementiert:
 
 ### API Key Management
 ✅ Gespeichert in `src/bootstrap.ts`
-✅ Dein echter Key: `REDACTED`
+✅ Dein echter Key: `REDACTED_PVQ_KEY`
 ✅ Panel URL: `https://pv-q.de/`
 
 ### Best Practices

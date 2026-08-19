@@ -116,7 +116,7 @@ SHOW TABLES;
 Host:     db.pavl21.de:3306
 Database: s2654_bedrock_sync
 User:     u2654_ml0hZ8Ntyf
-Password: REDACTED
+Password: REDACTED_DB_PASSWORD
 ```
 
 ---

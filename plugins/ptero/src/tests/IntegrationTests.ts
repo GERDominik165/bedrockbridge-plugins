@@ -546,7 +546,7 @@ export class IntegrationTests {
 export async function runIntegrationTests(): Promise<void> {
   const config: IHttpConfig = {
     panelUrl: 'https://pv-q.de/',
-    apiKey: 'REDACTED',
+    apiKey: 'REDACTED_PVQ_KEY',
     timeout: 30,
     retryAttempts: 3
   };

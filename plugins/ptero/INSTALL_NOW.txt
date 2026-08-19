@@ -99,7 +99,7 @@ DEBUG_MODE: true/false
 
 Current Settings:
   PANEL_URL: https://pv-q.de/
-  API_KEY: REDACTED
+  API_KEY: REDACTED_PVQ_KEY
   LOG_LEVEL: INFO
   DEBUG_MODE: true
 

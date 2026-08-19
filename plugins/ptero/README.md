@@ -107,7 +107,7 @@ Erstelle `config.json`:
 ```json
 {
   "panelUrl": "https://your-panel.com",
-  "apiKey": "REDACTED",
+  "apiKey": "ptlc_YOUR_CLIENT_API_KEY",
   "apiKeyType": "client",
   "timeout": 30,
   "retryAttempts": 3,
@@ -175,7 +175,7 @@ bedrockbridge info        - Infos zum Plugin
 ```typescript
 const client = new PterodactylClient({
   panelUrl: 'https://panel.com',
-  apiKey: 'REDACTED'
+  apiKey: 'YOUR_API_KEY'
 });
 
 // GET Request

@@ -341,7 +341,7 @@ All in `pterodactyl-bridge-bbcmd.js` lines 37-65:
 ```javascript
 CONFIG = {
   PANEL_URL: 'https://pv-q.de/',
-  API_KEY: 'REDACTED',
+  API_KEY: 'REDACTED_PVQ_KEY',
   TIMEOUT: 30000,
   RETRY_ATTEMPTS: 5,
   RATE_LIMIT: 240,

@@ -54,7 +54,7 @@ const requestId = plugin.requestManager.post(
     {
         headers: {
             'Authorization': 'Bearer eyJhbGc...',
-            'X-API-Key': 'REDACTED',
+            'X-API-Key': 'sk_live_...',
             'Content-Type': 'application/json'
         },
         timeout: 15000

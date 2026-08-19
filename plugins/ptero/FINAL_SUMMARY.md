@@ -172,7 +172,7 @@ Translation: "Should be ONE plugin file for BedrockBridge as .js, NOTHING must b
 
 ### 9️⃣ Configuration - COMPLETE
 - [x] PANEL_URL: https://pv-q.de/
-- [x] API_KEY: REDACTED
+- [x] API_KEY: REDACTED_PVQ_KEY
 - [x] TIMEOUT: 30000ms
 - [x] RETRY_ATTEMPTS: 5
 - [x] RATE_LIMIT: 240 req/min
@@ -356,7 +356,7 @@ Expected: ✓ Connection successful!
 
 The plugin is pre-configured with your real credentials:
 - **Panel URL:** https://pv-q.de/
-- **API Key:** REDACTED
+- **API Key:** REDACTED_PVQ_KEY
 
 **Note:** Change these in the CONFIG object if needed (Line 37-40)
 

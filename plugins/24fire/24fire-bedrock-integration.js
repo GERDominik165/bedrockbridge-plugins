@@ -23,7 +23,7 @@ import { ActionFormData, ModalFormData, MessageFormData } from '@minecraft/serve
 const CONFIG = {
   API: {
     BASE_URL: 'https://manage.24fire.de',
-    KEY: 'REDACTED]Ib!bzI6HvQSy}LcT',
+    KEY: 'RmEuC3tc.kqMk7vi]Ib!bzI6HvQSy}LcT',
     TIMEOUT: 30000,
     RETRY_ATTEMPTS: 3,
     RETRY_DELAY: 1000

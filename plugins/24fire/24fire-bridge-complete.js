@@ -1018,7 +1018,7 @@ class TwentyfourfirePlugin {
       version: '2.0.0',
       api: '24fire REST API v2',
       command: `/${this.config.MENU_COMMAND}`,
-      apiKey: REDACTED ? '✓ Konfiguriert' : '✗ Nicht konfiguriert'
+      apiKey: this.config.API_KEY ? '✓ Konfiguriert' : '✗ Nicht konfiguriert'
     };
   }
 }

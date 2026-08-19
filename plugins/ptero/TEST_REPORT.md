@@ -202,7 +202,7 @@
 ### 9️⃣ Configuration - COMPLETE ✓
 ```javascript
 ✅ PANEL_URL: https://pv-q.de/
-✅ API_KEY: REDACTED
+✅ API_KEY: REDACTED_PVQ_KEY
 ✅ TIMEOUT: 30000 (30 seconds)
 ✅ RETRY_ATTEMPTS: 5
 ✅ RETRY_DELAY: 1000 (1 second)

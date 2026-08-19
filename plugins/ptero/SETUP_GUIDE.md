@@ -31,7 +31,7 @@ Bearbeite `config.json`:
 {
   "pterodactyl": {
     "panelUrl": "https://dein-panel.de/",
-    "apiKey": "REDACTED",
+    "apiKey": "ptlc_YOUR_API_KEY",
     "timeout": 30,
     "retryAttempts": 3
   },
@@ -82,7 +82,7 @@ import { initializePlugin } from '../../../ptero/dist/index';
 // Plugin initialisieren
 await initializePlugin({
   panelUrl: 'https://your-panel.com/',
-  apiKey: 'REDACTED',
+  apiKey: 'ptlc_YOUR_API_KEY',
   timeout: 30,
   retryAttempts: 3,
   monitoringEnabled: true,
@@ -97,7 +97,7 @@ import { createPterodactylPlugin } from './ptero/dist/index.js';
 
 const plugin = await createPterodactylPlugin({
   panelUrl: 'https://your-panel.com/',
-  apiKey: 'REDACTED',
+  apiKey: 'ptlc_YOUR_API_KEY',
   timeout: 30,
   retryAttempts: 3,
   monitoringEnabled: true,
@@ -121,7 +121,7 @@ import { ConnectionTester } from './src/utils/ConnectionTester';
 
 const tester = new ConnectionTester({
   panelUrl: 'https://your-panel.com/',
-  apiKey: 'REDACTED'
+  apiKey: 'ptlc_YOUR_API_KEY'
 });
 
 const results = await tester.runTests();

@@ -20,7 +20,7 @@
 Host:     db.pavl21.de:3306
 Database: s2654_bedrock_sync
 User:     u2654_ml0hZ8Ntyf
-Password: REDACTED
+Password: REDACTED_DB_PASSWORD
 ```
 
 ### Was wird gespeichert?
@@ -45,7 +45,7 @@ Password: REDACTED
 # Mit MySQL CLI:
 mysql -h db.pavl21.de -u u2654_ml0hZ8Ntyf -p
 
-# Passwort eingeben: REDACTED
+# Passwort eingeben: REDACTED_DB_PASSWORD
 ```
 
 ### Schritt 2: Datenbank auswählen
@@ -520,7 +520,7 @@ mysql -h db.pavl21.de -u u2654_ml0hZ8Ntyf -p
 # Port:     3306          ✅
 # Database: s2654_bedrock_sync ✅
 # User:     u2654_ml0hZ8Ntyf ✅
-# Password: REDACTED ✅
+# Password: REDACTED_DB_PASSWORD ✅
 ```
 
 ### Problem 2: "Tabellen werden nicht erstellt"

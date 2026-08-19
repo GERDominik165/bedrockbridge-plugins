@@ -120,7 +120,7 @@ Shows: CPU 45.5%, Memory 1.2GB/2GB, Disk 5.2GB/10GB
 ### **Essential Settings**
 ```javascript
 PANEL_URL: 'https://pv-q.de/',           // Your panel URL
-API_KEY: 'REDACTED',                 // Your API key
+API_KEY: 'ptlc_RC7v...',                 // Your API key
 MENU_COMMAND: 'pman',                    // Main command
 MENU_COOLDOWN: 10000,                    // 10 seconds
 TIMEOUT: 30000,                          // 30 second timeout

@@ -10,7 +10,7 @@ import { world } from "@minecraft/server";
 
 // Default configuration constants
 const DEFAULTS = {
-    apiKey: "REDACTED",
+    apiKey: "REDACTED_GEMINI_KEY",
     modelName: "gemini-flash-latest",
     apiUrl: "https://generativelanguage.googleapis.com/v1beta/models",
     chatPrefix: "@ai",
@@ -56,14 +56,14 @@ export function initializeConfig() {
 
 // Validate API key is configured
 export function isApiKeyConfigured() {
-    const apiKey = REDACTED"apiKey");
+    const apiKey = getConfig("apiKey");
     return apiKey && apiKey !== "YOUR_GEMINI_API_KEY_HERE";
 }
 
 // Get the full API endpoint URL
 export function getApiEndpoint() {
     const modelName = getConfig("modelName");
-    const apiKey = REDACTED"apiKey");
+    const apiKey = getConfig("apiKey");
     return `${getConfig("apiUrl")}/${modelName}:generateContent?key=${apiKey}`;
 }
 

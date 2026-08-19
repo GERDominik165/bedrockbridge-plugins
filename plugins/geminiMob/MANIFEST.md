@@ -174,7 +174,7 @@ Player Output
 
 ### Essential Settings
 ```javascript
-apiKey: "REDACTED"      // Required
+apiKey: "YOUR_GEMINI_API_KEY"      // Required
 enableMobChat: true                 // Enable AI
 enableMobMemory: true               // Enable memory
 ```

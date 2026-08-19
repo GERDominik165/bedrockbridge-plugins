@@ -44,7 +44,7 @@ externalDatabaseRetries: 3          // Wiederholungen
 externalDatabaseTimeout: 5000       // Timeout ms
 
 Environment Variable:
-EXTERNAL_DB_TOKEN="REDACTED"
+EXTERNAL_DB_TOKEN="your-secret-token"
 
 ════════════════════════════════════════════════════════════════════════════════
 
@@ -234,7 +234,7 @@ const inventories = {};
 
 // Auth Middleware
 app.use((req, res, next) => {
-  const token = REDACTED' ')[1];
+  const token = req.headers.authorization?.split(' ')[1];
   if (token !== process.env.EXTERNAL_DB_TOKEN) return res.status(401).json({error: "Unauthorized"});
   next();
 });

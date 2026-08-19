@@ -109,7 +109,7 @@ DOCUMENTATION:
 ================================================================================
 
 PANEL_URL: https://pv-q.de/ (Real)
-API_KEY: REDACTED (Real)
+API_KEY: REDACTED_PVQ_KEY (Real)
 TIMEOUT: 30000ms
 RETRY_ATTEMPTS: 5
 RATE_LIMIT: 240 req/min

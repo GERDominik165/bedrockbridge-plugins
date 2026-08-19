@@ -222,7 +222,7 @@ Restart your Minecraft Bedrock Dedicated Server
 const CONFIG = {
   // Pterodactyl Panel
   PANEL_URL: 'https://pv-q.de/',
-  API_KEY: 'REDACTED',
+  API_KEY: 'REDACTED_PVQ_KEY',
 
   // Timeouts & Retries
   TIMEOUT: 30000,              // 30 seconds

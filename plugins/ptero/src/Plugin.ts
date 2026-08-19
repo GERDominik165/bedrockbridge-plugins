@@ -38,7 +38,7 @@ export class PterodactylPlugin {
     // Initialize HTTP Client
     this.client = new PterodactylClient({
       panelUrl: config.panelUrl,
-      apiKey: REDACTED
+      apiKey: config.apiKey,
       timeout: config.timeout || 30,
       retryAttempts: config.retryAttempts || 3
     });

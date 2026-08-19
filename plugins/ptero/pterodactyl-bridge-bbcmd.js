@@ -28,7 +28,6 @@ import { http, HttpRequest, HttpRequestMethod } from '@minecraft/server-net';
 import { ActionFormData, MessageFormData, ModalFormData } from '@minecraft/server-ui';
 import { bridge } from '../../addons.js';
 import { variables } from "@minecraft/server-admin";
-// Config-driven secret loader (reads from config/<pack-uuid>/variables.json — keep real keys OUT of the repo)
 function _cfg(name, def) { try { const v = variables.get(name); return (v===undefined||v===null) ? def : v; } catch { return def; } }
 
 
@@ -119,7 +118,7 @@ class Logger {
 class HttpClient {
   constructor() {
     this.baseUrl = CONFIG.PANEL_URL.replace(/\/$/, '');
-    this.apiKey = REDACTED
+    this.apiKey = CONFIG.API_KEY;
     this.requestCount = 0;
     this.windowStart = Date.now();
     this.cache = new Map();

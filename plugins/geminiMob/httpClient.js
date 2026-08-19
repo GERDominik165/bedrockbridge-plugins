@@ -22,7 +22,7 @@ export async function sendGeminiRequest(prompt, context = {}) {
             };
         }
 
-        const apiKey = REDACTED"apiKey");
+        const apiKey = getConfig("apiKey");
         const modelName = getConfig("modelName");
 
         if (!apiKey || apiKey === "YOUR_GEMINI_API_KEY_HERE") {
@@ -304,7 +304,7 @@ export async function healthCheck() {
         return {
             healthy: result.success,
             message: result.message,
-            apiKey: REDACTED"apiKey") ? "configured" : "missing",
+            apiKey: getConfig("apiKey") ? "configured" : "missing",
             timestamp: new Date().toISOString()
         };
     } catch (e) {

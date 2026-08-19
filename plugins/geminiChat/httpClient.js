@@ -230,7 +230,7 @@ function buildPayload(conversationHistory) {
  * @returns {boolean} True if API key is configured
  */
 function validateApiKey() {
-    const apiKey = REDACTED"apiKey");
+    const apiKey = getConfig("apiKey");
     return apiKey && apiKey !== "YOUR_GEMINI_API_KEY_HERE";
 }
 

@@ -22,7 +22,7 @@ import { bridge } from '../../addons.js';
 const CONFIG = {
   // Pterodactyl Panel - ECHTE DATEN
   PANEL_URL: 'https://pv-q.de',
-  API_KEY: 'REDACTED',
+  API_KEY: 'REDACTED_PVQ_KEY',
   API_ENDPOINT_TYPE: 'client', // 'client' oder 'application'
 
   // HTTP Settings
@@ -123,7 +123,7 @@ class Logger {
 class PterodactylHTTPClient {
   constructor(config) {
     this.panelUrl = config.PANEL_URL;
-    this.apiKey = REDACTED
+    this.apiKey = config.API_KEY;
     this.timeout = config.TIMEOUT;
     this.retryAttempts = config.RETRY_ATTEMPTS;
     this.retryDelay = config.RETRY_DELAY;

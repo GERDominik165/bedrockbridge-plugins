@@ -149,7 +149,7 @@ export async function showApiKeyForm(player) {
         return;
     }
 
-    const apiKey = REDACTED
+    const apiKey = response.formValues[0];
 
     if (!apiKey || apiKey.trim().length === 0) {
         player.sendMessage("§c[Gemini] API key cannot be empty.");

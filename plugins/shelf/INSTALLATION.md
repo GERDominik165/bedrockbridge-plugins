@@ -171,7 +171,7 @@ Falls vorhanden:
 // In shelfDiscord.js:
 gamblingBridge.initialize(
     "https://discord.com/api/webhooks/YOUR_ID/YOUR_TOKEN",
-    "REDACTED"
+    "CHANNEL_ID"
 );
 ```
 

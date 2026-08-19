@@ -45,7 +45,7 @@ ptlc_ABC123XYZ789...
 {
   "api": {
     "baseUrl": "https://manage.24fire.de",
-    "apiKey": "REDACTED",  // ← HIER eintragen!
+    "apiKey": "YOUR_API_KEY_HERE",  // ← HIER eintragen!
     "timeout": 30000,
     "retryAttempts": 3,
     "retryDelay": 1000
@@ -98,11 +98,11 @@ node server.js
 
 ```json
 // ✅ Richtig
-"apiKey": "REDACTED"
+"apiKey": "ptlc_ABC123..."
 
 // ❌ Falsch
 "apiKey": ""
-"apiKey": "REDACTED"
+"apiKey": "YOUR_API_KEY_HERE"
 ```
 
 ### Problem: "Keine Antwort vom Server"
@@ -224,22 +224,22 @@ import { bridge } from '../../Bedrock-Bridge/scripts/addons.js';
 
 ```javascript
 // ❌ NICHT im Quellcode speichern
-const apiKey = 'REDACTED';
+const apiKey = 'ptlc_ABC123...';
 
 // ✅ Aus Konfigurationsdatei laden
 import config from './config.json';
-const apiKey = REDACTED
+const apiKey = config.api.apiKey;
 ```
 
 ### 2. Umgebungsvariablen nutzen
 
 ```bash
 # .env Datei
-TWENTYFIRE_API_KEY=REDACTED
+TWENTYFIRE_API_KEY=ptlc_ABC123...
 
 # In Node.js
 require('dotenv').config();
-const apiKey = REDACTED
+const apiKey = process.env.TWENTYFIRE_API_KEY;
 ```
 
 ### 3. IP-Whitelist (optional)

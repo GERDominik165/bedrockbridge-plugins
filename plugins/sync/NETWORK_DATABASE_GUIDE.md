@@ -39,7 +39,7 @@ Das Plugin nutzt jetzt **@minecraft/server-net Module** für Kommunikation mit e
 
 ```bash
 # Token für Authentifizierung
-export EXTERNAL_DB_TOKEN="REDACTED"
+export EXTERNAL_DB_TOKEN="your-secret-token"
 
 # Oder in .env Datei:
 EXTERNAL_DB_TOKEN=your-secret-token
@@ -397,9 +397,9 @@ const app = express();
 app.use(express.json());
 
 // Authentifizierung
-const authToken = REDACTED || "default-token";
+const authToken = process.env.EXTERNAL_DB_TOKEN || "default-token";
 const auth = (req, res, next) => {
-  const token = REDACTED"Bearer ", "");
+  const token = req.headers.authorization?.replace("Bearer ", "");
   if (token !== authToken) return res.status(401).json({error: "Unauthorized"});
   next();
 };

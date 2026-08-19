@@ -22,7 +22,7 @@ import { bridge } from "../../addons.js";
 const CONFIG_PRESETS = {
   STANDARD: {
     PANEL_URL: "https://your-panel.com",
-    API_KEY: "REDACTED",
+    API_KEY: "ptlc_YOUR_KEY",
     API_KEY_TYPE: "client",
     TIMEOUT: 30000,
     RETRY_ATTEMPTS: 3,
@@ -386,7 +386,7 @@ class CacheManager {
 class PterodactylHTTPClient {
   constructor(config) {
     this.panelUrl = config.PANEL_URL;
-    this.apiKey = REDACTED
+    this.apiKey = config.API_KEY;
     this.apiKeyType = config.API_KEY_TYPE;
     this.timeout = config.TIMEOUT;
     this.retryAttempts = config.RETRY_ATTEMPTS;

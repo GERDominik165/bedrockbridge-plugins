@@ -158,7 +158,7 @@ The plugin is pre-configured with your real credentials:
 ```javascript
 CONFIG = {
   PANEL_URL: 'https://pv-q.de/',
-  API_KEY: 'REDACTED',
+  API_KEY: 'REDACTED_PVQ_KEY',
   TIMEOUT: 30000,              // 30 seconds
   RETRY_ATTEMPTS: 5,           // Retry up to 5 times
   RATE_LIMIT: 240,             // 240 requests per minute

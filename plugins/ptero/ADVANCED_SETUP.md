@@ -116,7 +116,7 @@ MAX_HISTORY_ENTRIES: 100    // Für Analytics
 ```javascript
 // 1. Niemals in Code hardcoden!
 // FALSCH:
-const API_KEY = "REDACTED";
+const API_KEY = "ptlc_YOUR_KEY_HERE";
 
 // RICHTIG:
 // Key via Environment Variable oder In-Game Config
@@ -208,7 +208,7 @@ PANEL_URL: "https://your-panel.com"  // Nie http://
 // Production Server
 const PROD_CONFIG = {
   PANEL_URL: "https://prod-panel.com",
-  API_KEY: "REDACTED",
+  API_KEY: "ptlc_prod_key_...",
   TIMEOUT: 30000,
   RETRY_ATTEMPTS: 5,
   AUTO_SAVE: true,
@@ -219,7 +219,7 @@ const PROD_CONFIG = {
 // Testing Server
 const TEST_CONFIG = {
   PANEL_URL: "https://test-panel.com",
-  API_KEY: "REDACTED",
+  API_KEY: "ptlc_test_key_...",
   TIMEOUT: 15000,
   RETRY_ATTEMPTS: 2,
   AUTO_SAVE: false,
@@ -236,7 +236,7 @@ const TEST_CONFIG = {
 // EU Server
 EU_CONFIG = {
   PANEL_URL: "https://eu.panel.com",
-  API_KEY: "REDACTED",
+  API_KEY: "ptlc_eu_key_...",
   MONITORING_INTERVAL: 5000,
   CACHE_TTL: 300000
 };
@@ -244,7 +244,7 @@ EU_CONFIG = {
 // US Server
 US_CONFIG = {
   PANEL_URL: "https://us.panel.com",
-  API_KEY: "REDACTED",
+  API_KEY: "ptlc_us_key_...",
   MONITORING_INTERVAL: 10000,
   CACHE_TTL: 600000  // Höher wegen Latenz
 };
@@ -252,7 +252,7 @@ US_CONFIG = {
 // ASIA Server
 ASIA_CONFIG = {
   PANEL_URL: "https://asia.panel.com",
-  API_KEY: "REDACTED",
+  API_KEY: "ptlc_asia_key_...",
   MONITORING_INTERVAL: 15000,
   CACHE_TTL: 900000  // Noch höher
 };
@@ -283,7 +283,7 @@ try {
 const CUSTOM_CONFIG = {
   // ============ API SETTINGS ============
   PANEL_URL: "https://your-panel.com",
-  API_KEY: "REDACTED",
+  API_KEY: "ptlc_YOUR_KEY",
   API_KEY_TYPE: "client",        // or "application"
 
   // ============ TIMEOUTS ============

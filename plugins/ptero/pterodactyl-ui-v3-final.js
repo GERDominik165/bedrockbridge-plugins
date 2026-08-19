@@ -20,7 +20,7 @@ import { bridge } from '../../Bedrock-Bridge/scripts/addons.js';
 
 const CONFIG = {
   PANEL_URL: 'https://pv-q.de/',
-  API_KEY: 'REDACTED',
+  API_KEY: 'REDACTED_PVQ_KEY',
 
   TIMEOUT: 30000,
   RETRY_ATTEMPTS: 5,

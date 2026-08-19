@@ -8,7 +8,7 @@
 {
   "pterodactyl": {
     "panelUrl": "https://dein-panel.de/",
-    "apiKey": "REDACTED"
+    "apiKey": "ptlc_YOUR_API_KEY"
   }
 }
 ```
@@ -88,7 +88,7 @@ npm run build
 {
   "pterodactyl": {
     "panelUrl": "https://your-panel.com/",
-    "apiKey": "REDACTED",
+    "apiKey": "ptlc_YOUR_API_KEY",
     "timeout": 30,
     "retryAttempts": 3
   },

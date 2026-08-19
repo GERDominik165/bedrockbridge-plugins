@@ -15,7 +15,7 @@
  * - Good for both factual and creative questions
  */
 const DEFAULT_CONFIG = {
-    apiKey: "REDACTED",
+    apiKey: "YOUR_GEMINI_API_KEY_HERE",
     modelName: "gemini-flash-latest",
     chatPrefix: "@g",
     maxTokens: 500,

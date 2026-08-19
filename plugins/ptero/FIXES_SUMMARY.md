@@ -137,7 +137,7 @@ import { ConnectionTester } from './src/utils/ConnectionTester';
 
 const tester = new ConnectionTester({
   panelUrl: 'https://your-panel.com/',
-  apiKey: 'REDACTED'
+  apiKey: 'ptlc_YOUR_API_KEY'
 });
 
 const results = await tester.runTests();
@@ -180,7 +180,7 @@ Overall Status: SUCCESS ✓
 {
   "pterodactyl": {
     "panelUrl": "https://pv-q.de/",
-    "apiKey": "REDACTED",
+    "apiKey": "REDACTED_PVQ_KEY",
     "timeout": 30,
     "retryAttempts": 3
   },

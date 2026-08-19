@@ -86,7 +86,7 @@ cp 24fire-bridge-complete.js D:\BB\bridgePlugins\24fire24fire\
 {
   "api": {
     "baseUrl": "https://manage.24fire.de",
-    "apiKey": "REDACTED"
+    "apiKey": "your-24fire-api-key-here"
   }
 }
 ```

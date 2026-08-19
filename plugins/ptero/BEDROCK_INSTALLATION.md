@@ -94,7 +94,7 @@ Verfügbare Befehle:
 ```javascript
 const CONFIG = {
   PANEL_URL: 'https://pv-q.de/',                          // ← DEINE PANEL URL
-  API_KEY: 'REDACTED',  // ← DEIN API KEY
+  API_KEY: 'REDACTED_PVQ_KEY',  // ← DEIN API KEY
   TIMEOUT: 30000,
   RETRY_ATTEMPTS: 3,
   COMMAND_PREFIX: 'bedrockbridge',                         // ← Befehl-Präfix

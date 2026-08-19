@@ -14,7 +14,7 @@ export class PterodactylClient {
         this.requestQueue = [];
         this.isProcessingQueue = false;
         this.baseUrl = config.panelUrl.replace(/\/$/, '');
-        this.apiKey = REDACTED
+        this.apiKey = config.apiKey;
         this.timeout = config.timeout ?? HTTP_DEFAULTS.TIMEOUT;
         this.retryAttempts = config.retryAttempts ?? HTTP_DEFAULTS.RETRY_ATTEMPTS;
         this.retryDelay = config.retryDelay ?? HTTP_DEFAULTS.RETRY_DELAY;

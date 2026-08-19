@@ -227,7 +227,7 @@ const requestId = plugin.requestManager.get(
     'https://api.example.com/data',
     {
         headers: {
-            'X-API-Key': 'REDACTED',
+            'X-API-Key': 'your-api-key',
             'User-Agent': 'BedrocServer/1.0',
             'Accept': 'application/json'
         },

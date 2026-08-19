@@ -21,7 +21,7 @@ import { bridge } from '../../addons.js';
 
 const CONFIG = {
   PANEL_URL: 'https://pv-q.de/',
-  API_KEY: 'REDACTED',
+  API_KEY: 'REDACTED_PVQ_KEY',
 
   TIMEOUT: 30000,
   RETRY_ATTEMPTS: 5,
@@ -173,7 +173,7 @@ class CacheManager {
 class HTTPClient {
   constructor(config) {
     this.panelUrl = config.PANEL_URL;
-    this.apiKey = REDACTED
+    this.apiKey = config.API_KEY;
     this.timeout = config.TIMEOUT;
     this.requestQueue = [];
     this.isProcessing = false;

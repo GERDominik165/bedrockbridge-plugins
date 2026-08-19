@@ -16,13 +16,13 @@ export const WHConfig = {
     moderation: "https://discord.com/api/webhooks/REDACTED/REDACTED", // Moderation actions
     analytics: "https://discord.com/api/webhooks/REDACTED/REDACTED", // Statistics and reports
     errors: "https://discord.com/api/webhooks/REDACTED/REDACTED", // Error logs
-    containerLogs: https://discord.com/api/webhooks/REDACTED/REDACTED,
-    itemLogs: https://discord.com/api/webhooks/REDACTED/REDACTED,
-    anticheat: https://discord.com/api/webhooks/REDACTED/REDACTED,
-    economy: https://discord.com/api/webhooks/REDACTED/REDACTED,
-    leaderboard: https://discord.com/api/webhooks/REDACTED/REDACTED,
-    teleportLogs: https://discord.com/api/webhooks/REDACTED/REDACTED,
-    weatherEvents: https://discord.com/api/webhooks/REDACTED/REDACTED,
+    containerLogs: "https://discord.com/api/webhooks/REDACTED/REDACTED",
+    itemLogs: "https://discord.com/api/webhooks/REDACTED/REDACTED",
+    anticheat: "https://discord.com/api/webhooks/REDACTED/REDACTED",
+    economy: "https://discord.com/api/webhooks/REDACTED/REDACTED",
+    leaderboard: "https://discord.com/api/webhooks/REDACTED/REDACTED",
+    teleportLogs: "https://discord.com/api/webhooks/REDACTED/REDACTED",
+    weatherEvents: "https://discord.com/api/webhooks/REDACTED/REDACTED",
     // Add custom webhook types here
   },
   

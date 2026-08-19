@@ -64,7 +64,7 @@ Replace `YOUR_API_KEY_HERE` with your actual key.
 
 Example:
 ```
-/mob config apikey REDACTED_GEMINI_API_KEY
+/mob config apikey REDACTED_GEMINI_KEY
 ```
 
 ### Step 5: Verify Installation
@@ -105,7 +105,7 @@ All settings can be found in `config.js`:
 ```javascript
 const DEFAULTS = {
     // API Settings
-    apiKey: "REDACTED",
+    apiKey: "YOUR_API_KEY",
     modelName: "gemini-flash-latest",
     apiUrl: "https://generativelanguage.googleapis.com/v1beta/models",
 

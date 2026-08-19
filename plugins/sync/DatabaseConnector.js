@@ -16,7 +16,7 @@ const MYSQL_CONFIG = {
   port: 3306,
   database: "s2654_bedrock_sync",
   user: "u2654_ml0hZ8Ntyf",
-  password: "REDACTED",
+  password: "REDACTED_DB_PASSWORD",
 
   // Connection Pool Settings
   connectionLimit: 10,
