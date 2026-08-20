@@ -119,7 +119,7 @@ function registerEventHandlers() {
     logger.info("HANDLERS", "Registering event handlers...");
 
     // Handle entity damage
-    world.afterEvents.entityDamage.subscribe((event) => {
+    world.afterEvents.entityHurt.subscribe((event) => {
         try {
             console.log(`[GeminiMob/DAMAGE] ========== DAMAGE EVENT ==========`);
 
