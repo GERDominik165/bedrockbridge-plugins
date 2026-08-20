@@ -3,42 +3,32 @@
 // Diese Datei enthält alle Konfigurationen für das Webhook Plugin
 // NEW: Achievement Tracking, Ratelimit Management, Health Checks, Advanced Analytics
 
+import { variables } from "@minecraft/server-admin";
+function _wh(name){ try{ const s=variables.get("wh_"+name); if(s) return String(s); const a=variables.get("wh_all"); return a?String(a):""; }catch(e){ return ""; } }
+
 export const WHConfig = {
   // ================== WEBHOOK URLS ==================
   // Hier kannst du für jeden Log-Typ einen eigenen Discord Channel definieren
   webhooks: {
-    // Hauptkanal - Fallback für alle Nachrichten ohne eigenen Webhook
-    general: "https://discord.com/api/webhooks/REDACTED/REDACTED",
-    
-    // Chat & Kommunikation
-    chat: "https://discord.com/api/webhooks/REDACTED/REDACTED",              // In-Game Chat Nachrichten
-    commands: "https://discord.com/api/webhooks/REDACTED/REDACTED",          // Command-Nutzung (/command, !command)
-    
-    // Spieler Events
-    playerEvents: "https://discord.com/api/webhooks/REDACTED/REDACTED",      // Join/Leave/AFK
-    deaths: "https://discord.com/api/webhooks/REDACTED/REDACTED",           // Tod-Nachrichten
-    achievements: "https://discord.com/api/webhooks/REDACTED/REDACTED",     // Erfolge & Advancements
-    
-    // Server Events  
-    serverEvents: "https://discord.com/api/webhooks/REDACTED/REDACTED",     // Start/Stop/Restart
-    worldEvents: "https://discord.com/api/webhooks/REDACTED/REDACTED",      // Boss-Kills, Raids, Events
-    weatherEvents: "https://discord.com/api/webhooks/REDACTED/REDACTED",    // Wetter-Änderungen
-    
-    // Logs & Überwachung
-    blockLogs: "https://discord.com/api/webhooks/REDACTED/REDACTED",        // Block Place/Break (wichtige Blöcke)
-    itemLogs: "https://discord.com/api/webhooks/REDACTED/REDACTED",         // Item-Nutzung (wichtige Items)
-    containerLogs: "https://discord.com/api/webhooks/REDACTED/REDACTED",    // Kisten/Container-Zugriffe
-    teleportLogs: "https://discord.com/api/webhooks/REDACTED/REDACTED",     // Teleports & Dimensionswechsel
-    
-    // Moderation & Sicherheit
-    moderation: "https://discord.com/api/webhooks/REDACTED/REDACTED",       // Kicks/Bans/Mutes
-    anticheat: "https://discord.com/api/webhooks/REDACTED/REDACTED",       // Verdächtige Aktivitäten
-    errors: "https://discord.com/api/webhooks/REDACTED/REDACTED",          // Fehler & Warnungen
-    
-    // Statistiken & Reports
-    analytics: "https://discord.com/api/webhooks/REDACTED/REDACTED",       // Stündliche/Tägliche Reports
-    economy: "https://discord.com/api/webhooks/REDACTED/REDACTED",         // Economy-Transaktionen (falls vorhanden)
-    leaderboard: "https://discord.com/api/webhooks/REDACTED/REDACTED"      // Top-Listen Updates
+    general: _wh("general"),
+    chat: _wh("chat"),
+    commands: _wh("commands"),
+    playerEvents: _wh("playerEvents"),
+    deaths: _wh("deaths"),
+    achievements: _wh("achievements"),
+    serverEvents: _wh("serverEvents"),
+    worldEvents: _wh("worldEvents"),
+    weatherEvents: _wh("weatherEvents"),
+    blockLogs: _wh("blockLogs"),
+    itemLogs: _wh("itemLogs"),
+    containerLogs: _wh("containerLogs"),
+    teleportLogs: _wh("teleportLogs"),
+    moderation: _wh("moderation"),
+    anticheat: _wh("anticheat"),
+    errors: _wh("errors"),
+    analytics: _wh("analytics"),
+    economy: _wh("economy"),
+    leaderboard: _wh("leaderboard")
   },
   
   // ================== FEATURE TOGGLES ==================
