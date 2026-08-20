@@ -1164,6 +1164,8 @@ function registerAutoSaveSystem() {
  * Commands registrieren
  */
 function registerAllCommands() {
+  if (!bridge || !bridge.bedrockCommands) { system.runTimeout(registerAllCommands, 5); return; }
+  if (registerAllCommands.__done) return; registerAllCommands.__done = true;
   try {
     LOG(`Registering all commands...`, 'EVENT');
 
