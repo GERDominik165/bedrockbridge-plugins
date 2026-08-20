@@ -305,3 +305,11 @@ function openMainMenu(player) {
     });
 }
 });
+
+
+// --- In das zentrale BridgeHub registrieren ---
+import { hub as _bridgeHub } from "./hubAPI.js";
+try {
+  _bridgeHub.register({ id: "tnmenu", title: "📋 TN-Menü", icon: "textures/ui/hamburger", category: "Allgemein", order: 40, handler: p => openMainMenu(p) });
+  console.warn("[tnmenu] im Hub registriert");
+} catch (e) { console.warn("[tnmenu] hub-reg: " + e); }

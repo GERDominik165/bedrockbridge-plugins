@@ -639,3 +639,10 @@ system.run(() => {
     }
   }, 100);
 });
+
+// --- In das zentrale BridgeHub registrieren ---
+import { hub as _bridgeHub } from "./hubAPI.js";
+try {
+  _bridgeHub.register({ id: "hearts", title: "❤ Herzanzeige", icon: "textures/ui/heart_new", category: "Anzeige", order: 10, handler: p => openHeartMenu(p) });
+  console.warn("[hearts] im Hub registriert");
+} catch (e) { console.warn("[hearts] hub-reg: " + e); }
