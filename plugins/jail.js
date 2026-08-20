@@ -179,3 +179,7 @@ bridge.bedrockCommands.registerAdminCommand('unjail', (admin, args) => {
 
 // 🧾 Log
 console.warn('📦 Jail Plugin loaded ✅ – TrophyNetwork BedrockBridge Ultra Edition');
+
+// --- In das zentrale BridgeHub registrieren ---
+import { hub as _bridgeHub } from "./hubAPI.js";
+try { _bridgeHub.register({ id: "jail", title: "🔒 Jail", icon: "textures/blocks/iron_bars", category: "Verwaltung", order: 20, permission: "esploratori:admin", handler: p => openJailUI(p) }); console.warn("[jail] im Hub registriert"); } catch (e) { console.warn("[jail] hub-reg: " + e); }

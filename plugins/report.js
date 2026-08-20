@@ -1284,3 +1284,7 @@ bridge.bedrockCommands.registerAdminCommand(
     },
     "Configure the report system behaviour."
 );
+
+// --- In das zentrale BridgeHub registrieren ---
+import { hub as _bridgeHub } from "./hubAPI.js";
+try { _bridgeHub.register({ id: "report", title: "📢 Spieler melden", icon: "textures/ui/warning_glyph", category: "Community", order: 10, handler: p => openReportFlow(p) }); console.warn("[report] im Hub registriert"); } catch (e) { console.warn("[report] hub-reg: " + e); }

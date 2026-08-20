@@ -6,7 +6,7 @@
  * Andere Plugins fügen eigene Menüpunkte via `import { hub } from "./hubAPI.js"`.
  */
 import { world, system } from "@minecraft/server";
-import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
+import { ActionFormData, ModalFormData, MessageFormData } from "@minecraft/server-ui";
 import { http, HttpRequest, HttpRequestMethod, HttpHeader } from "@minecraft/server-net";
 import { variables } from "@minecraft/server-admin";
 import { bridge } from "../addons";
@@ -166,9 +166,35 @@ async function openServers(player) {
   const a = k.relationships?.allocations?.data?.[0]?.attributes;
   const d = await show(player, new ActionFormData().title("§f" + (k.name || k.identifier))
     .body("§7ID: §f" + (k.identifier || "?") + "\n§7Node: §f" + (k.node || "?") +
-          "\n§7RAM: §f" + (k.limits?.memory ?? "?") + " MB" + (a ? "\n§7Adresse: §f" + a.ip + ":" + a.port : ""))
+          "\n§7RAM: §f" + (k.limits?.memory ?? "?") + " MB" + (a ? "\n§7Adresse: §f" + a.ip + ":" + a.port : "") +
+          "\n\n§8Steuert den ECHTEN Server:")
+    .button("§a▶ Start", "textures/ui/color_plus")
+    .button("§c■ Stop", "textures/ui/cancel")
+    .button("§e⟳ Restart", "textures/ui/refresh")
     .button("§8« Server-Liste"));
-  if (!d.canceled) return openServers(player);
+  if (d.canceled) return;
+  if (d.selection === 3) return openServers(player);
+  const signal = ["start", "stop", "restart"][d.selection];
+  const conf = await show(player, new MessageFormData().title("§lBestätigen")
+    .body("§7Server §f" + (k.name || k.identifier) + "§7 wirklich §f§l" + signal.toUpperCase() + "§r§7?\n§c⚠ steuert den echten Server!")
+    .button1("§aJa, " + signal).button2("§8Abbrechen"));
+  if (conf.selection === 0) await pvqPower(player, uuid, k.identifier, signal, k.name || k.identifier);
+  return openServers(player);
+}
+
+// Power-Aktion an einen pv-q Child-Server (start/stop/restart)
+async function pvqPower(player, uuid, childId, signal, name) {
+  const key = cfg("pvq_key");
+  player.sendMessage("§7sende §f" + signal + "§7 an §f" + name + "§7…");
+  try {
+    const req = new HttpRequest(PVQ_BASE + "/" + uuid + "/" + childId + "/power");
+    req.method = HttpRequestMethod.Post;
+    req.headers = [new HttpHeader("Authorization", "Bearer " + key), new HttpHeader("Content-Type", "application/json"), new HttpHeader("Accept", "application/json")];
+    req.body = JSON.stringify({ signal });
+    const res = await http.request(req);
+    if (res.status === 204 || res.status === 200) player.sendMessage("§a✓ " + signal.toUpperCase() + " an §f" + name + " §agesendet.");
+    else player.sendMessage("§c" + signal + " fehlgeschlagen (HTTP " + res.status + "): §7" + String(res.body || "").slice(0, 90));
+  } catch (e) { player.sendMessage("§cFehler: " + (e && e.message ? e.message : e)); }
 }
 
 async function openFire(player) {
