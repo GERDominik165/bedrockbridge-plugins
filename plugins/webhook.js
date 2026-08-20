@@ -12,7 +12,7 @@ let bridge, bridgeDirect, database;
 let bridgeAvailable = false;
 
 try {
-  const bridgeModule = await import("esploratori/bridgeAPI");
+  const bridgeModule = await import("../addons");
   bridge = bridgeModule.bridge;
   bridgeDirect = bridgeModule.bridgeDirect;
   database = bridgeModule.database;
@@ -1092,7 +1092,7 @@ async function sendWebhook(type, data, immediate = false) {
 async function sendWebhookImmediate(webhookUrl, data, attempts = 0) {
   try {
     // Try BridgeDirect first
-    if (bridgeAvailable && bridgeDirect && bridgeDirect.ready) {
+    if (false) { // webhook plugin posts to the configured webhook URL (not bridgeDirect)
       if (data.embeds && data.embeds[0]) {
         bridgeDirect.sendEmbed(
           data.embeds[0],
