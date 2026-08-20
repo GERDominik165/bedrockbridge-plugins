@@ -187,7 +187,7 @@ async function pvqPower(player, uuid, childId, signal, name) {
   const key = cfg("pvq_key");
   player.sendMessage("§7sende §f" + signal + "§7 an §f" + name + "§7…");
   try {
-    const req = new HttpRequest(PVQ_BASE + "/" + uuid + "/" + childId + "/power");
+    const req = new HttpRequest(PVQ_BASE + "/" + uuid + "/children/" + childId + "/power");
     req.method = HttpRequestMethod.Post;
     req.headers = [new HttpHeader("Authorization", "Bearer " + key), new HttpHeader("Content-Type", "application/json"), new HttpHeader("Accept", "application/json")];
     req.body = JSON.stringify({ signal });
