@@ -215,7 +215,20 @@ async function openFire(player) {
   if (!r.canceled) return openHub(player);
 }
 
+// ---------- 🧩 Plugin-Übersicht (alle registrierten Menüpunkte) ----------
+async function openPlugins(player) {
+  if (!isAdmin(player)) { player.sendMessage("§cNur für Admins."); return; }
+  const all = hub.all();
+  const body = "§7" + all.length + " Menüpunkte im Hub registriert:\n\n" + all.map(e => {
+    const perm = !e.permission ? "§ajeder" : (typeof e.permission === "function" ? "§eFunktion" : "§c" + (Array.isArray(e.permission) ? e.permission.join("/") : e.permission));
+    return "§f" + e.title + " §8[" + (e.category || "-") + "]§r " + perm + (hub.visibleFor(player).some(v => v.id === e.id) ? "" : " §8(für dich verborgen)");
+  }).join("\n");
+  const r = await show(player, new ActionFormData().title("§l🧩 Plugin-Übersicht").body(body).button("§8« Zurück"));
+  if (!r.canceled) return openHub(player);
+}
+
 /* ================= Kern-Bereiche in die Registry ================= */
+hub.register({ id: "plugins", title: "🧩 Plugin-Übersicht", icon: "textures/items/book_normal", category: "Admin", order: 40, permission: ADMIN_TAG, handler: openPlugins });
 hub.register({ id: "teleport", title: "🏠 Teleport & Homes", icon: "textures/items/ender_pearl", category: "Allgemein", order: 10, handler: openTeleport });
 hub.register({ id: "info", title: "📊 Server-Info", icon: "textures/items/clock_item", category: "Allgemein", order: 20, handler: openInfo });
 hub.register({ id: "ai", title: "🤖 KI fragen", icon: "textures/items/book_writable", category: "Allgemein", order: 30, handler: openAI });

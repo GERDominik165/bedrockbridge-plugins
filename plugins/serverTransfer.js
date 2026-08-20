@@ -100,7 +100,7 @@ system.afterEvents.scriptEventReceive.subscribe(ev => {
 
 // ====== Kompass öffnet Menü ======
 world.beforeEvents.itemUse.subscribe(ev => {
-  if (ev.itemStack?.typeId !== "minecraft:compass") return;
+  if (ev.itemStack?.typeId !== "minecraft:clock") return;
   const player = ev.source;
   if (!player) return;
   system.run(() => openServerSelectionMenu(player));
@@ -153,3 +153,11 @@ function executeTransfer(player, server) {
 }
 
 console.log("✨ TrophyNetwork Server Transfer Plugin geladen!");
+
+
+// --- In das zentrale BridgeHub registrieren ---
+import { hub as _bridgeHub } from "./hubAPI.js";
+try {
+  _bridgeHub.register({ id: "servertransfer", title: "🔀 Server wechseln", icon: "textures/items/ender_pearl", category: "Server", order: 10, handler: p => openServerSelectionMenu(p) });
+  console.warn("[servertransfer] im Hub registriert");
+} catch (e) { console.warn("[servertransfer] hub-reg: " + e); }
