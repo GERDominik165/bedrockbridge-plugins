@@ -1200,3 +1200,9 @@ globalThis.CustomPaintings = {
 
 console.info("[CustomPaintings] Plugin loaded successfully!");
 console.info("[CustomPaintings] Place a custom painting block to get started");
+// --- Hub-Eintrag ---
+import { hub as _cpHub } from "./hubAPI.js";
+try {
+  _cpHub.register({ id: "cpaintings", title: "\u{1F5BC} Bilder", icon: "textures/ui/icon_panorama", category: "Werkzeuge", order: 70, permission: null, handler: (p) => plugin.showPlayerPaintings(p) });
+  console.warn("[cpaintings] im Hub registriert");
+} catch (e) { console.warn("[cpaintings] hub-reg: " + e); }

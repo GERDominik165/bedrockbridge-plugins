@@ -117,13 +117,13 @@ safeSubscribe(world.afterEvents.playerPlaceBlock, ({ player, block }) => {
 });
 
 // Item usage
-safeSubscribe(world.afterEvents.itemUseOn, ({ source, block, itemStack }) => {
-  if (!itemStack || isInSafeZone(block.location)) return;
+safeSubscribe(world.afterEvents.playerInteractWithBlock, ({ player, block, itemStack }) => {
+  if (!itemStack || !block || isInSafeZone(block.location)) return;
   const itemId = itemStack.typeId;
 
   if (griefItems.has(itemId)) {
     const reason = itemId.includes("lava") ? "Player Used Lava Bucket" : itemId.includes("fire") ? "Player Ignited Fire" : "Player Used Ignition Item";
-    sendGriefAlert({ player: source, location: block.location, dimension: block.dimension, reason, blockType: itemId });
+    sendGriefAlert({ player, location: block.location, dimension: block.dimension, reason, blockType: itemId });
   }
 });
 
