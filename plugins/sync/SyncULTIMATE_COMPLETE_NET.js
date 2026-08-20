@@ -220,7 +220,7 @@ class Logger {
       console.log(msg);
     }
 
-    if (CONFIG.logging.toApi && httpClient) {
+    if (CONFIG.logging.toApi && httpClient && (level === "ERROR" || level === "WARN")) {
       httpClient.post("/api/logs", {
         level,
         message,
@@ -235,7 +235,7 @@ class Logger {
   static error(message, error, playerName = "UNKNOWN") {
     this.log(`ERROR: ${message} - ${error.message}`, "ERROR");
 
-    if (CONFIG.logging.toApi && httpClient) {
+    if (CONFIG.logging.toApi && httpClient && (level === "ERROR" || level === "WARN")) {
       httpClient.post("/api/errors", {
         message,
         error: error.message,
@@ -628,8 +628,6 @@ function setupNetworkMonitoring() {
     // Monitor wichtige Pakete
     const monitoredPackets = [
       "PlayerSpawnPacket",
-      "MovePlayerPacket",
-      "InventoryTransactionPacket",
       "DisconnectPacket"
     ];
 
