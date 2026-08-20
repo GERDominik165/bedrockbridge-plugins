@@ -25,7 +25,7 @@ const CONFIG = {
   // === API ENDPOINT (Node.js Server mit MySQL) ===
   api: {
     // Dein Node.js Server muss auf diesem Port laufen!
-    baseUrl: "http://localhost:3001",
+    baseUrl: "http://127.0.0.1:3001",
     apiKey: new SecretString("your-api-key-here"),
     timeout: 30,
     retries: 3
@@ -828,3 +828,14 @@ export async function initialize(bridge) {
 // ═══════════════════════════════════════════════════════════════════════════════════════════════
 
 export { SyncManager, InventoryManager, ItemSerializer, Logger, HTTPClientWrapper };
+
+// --- Bootstrap: initialize(bridge) wurde nie aufgerufen -> nachgeruestet ---
+import { bridge as _syncBridge } from "../../addons";
+(function _syncBoot(t) {
+  t = t || 0;
+  if (_syncBridge && _syncBridge.bedrockCommands) {
+    try { Promise.resolve(initialize(_syncBridge)).then(function(ok){ console.warn("[SyncNET] initialize() -> " + ok); }).catch(function(e){ console.warn("[SyncNET] init-Fehler: " + e); }); } catch (e) { console.warn("[SyncNET] boot: " + e); }
+    return;
+  }
+  if (t < 300) system.runTimeout(function(){ _syncBoot(t + 1); }, 5);
+})();
