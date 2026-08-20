@@ -180,6 +180,6 @@ console.log("♻️ BedrockBridge ClearLag Titan Edition v3.4.7 geladen – voll
 // --- In das zentrale BridgeHub registrieren ---
 import { hub as _bridgeHub } from "./hubAPI.js";
 try {
-  _bridgeHub.register({ id: "clearlag", title: "🧹 ClearLag", icon: "textures/ui/trash", category: "Admin", order: 60, permission: "esploratori:admin", handler: p => openClearLagMenu(p) });
+  _bridgeHub.register({ id: "clearlag", title: "🧹 ClearLag", icon: "textures/ui/trash", category: "Admin", order: 60, permission: "esploratori:admin", handler: openClearLagMenu });
   console.warn("[clearlag] im Hub registriert");
 } catch (e) { console.warn("[clearlag] hub-reg: " + e); }

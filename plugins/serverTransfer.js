@@ -158,6 +158,6 @@ console.log("✨ TrophyNetwork Server Transfer Plugin geladen!");
 // --- In das zentrale BridgeHub registrieren ---
 import { hub as _bridgeHub } from "./hubAPI.js";
 try {
-  _bridgeHub.register({ id: "servertransfer", title: "🔀 Server wechseln", icon: "textures/items/ender_pearl", category: "Server", order: 10, handler: p => openServerSelectionMenu(p) });
+  _bridgeHub.register({ id: "servertransfer", title: "🔀 Server wechseln", icon: "textures/items/ender_pearl", category: "Server", order: 10, handler: openServerSelectionMenu });
   console.warn("[servertransfer] im Hub registriert");
 } catch (e) { console.warn("[servertransfer] hub-reg: " + e); }

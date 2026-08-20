@@ -233,6 +233,6 @@ try {
 // --- In das zentrale BridgeHub registrieren ---
 import { hub as _bridgeHub } from "./hubAPI.js";
 try {
-  _bridgeHub.register({ id: "commandspy", title: "👁 Command-Spy", icon: "textures/ui/spyglass_flat", category: "Admin", order: 50, permission: "esploratori:admin", handler: p => showCommandBlockList(p) });
+  _bridgeHub.register({ id: "commandspy", title: "👁 Command-Spy", icon: "textures/ui/spyglass_flat", category: "Admin", order: 50, permission: "esploratori:admin", handler: showCommandBlockList });
   console.warn("[commandspy] im Hub registriert");
 } catch (e) { console.warn("[commandspy] hub-reg: " + e); }

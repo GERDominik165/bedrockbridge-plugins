@@ -134,4 +134,4 @@ console.warn("🎥 Spectator Plugin loaded with real spectator mode, management 
 
 // --- In das zentrale BridgeHub registrieren ---
 import { hub as _bridgeHub } from "./hubAPI.js";
-try { _bridgeHub.register({ id: "spectate", title: "👁 Zuschauen", icon: "textures/ui/spyglass_flat", category: "Community", order: 20, handler: p => openSpectatorUI(p) }); console.warn("[spectate] im Hub registriert"); } catch (e) { console.warn("[spectate] hub-reg: " + e); }
+try { _bridgeHub.register({ id: "spectate", title: "👁 Zuschauen", icon: "textures/ui/spyglass_flat", category: "Community", order: 20, handler: openSpectatorUI }); console.warn("[spectate] im Hub registriert"); } catch (e) { console.warn("[spectate] hub-reg: " + e); }

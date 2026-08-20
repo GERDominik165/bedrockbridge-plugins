@@ -237,6 +237,6 @@ console.log("📊 ChatRank Manager UI – Ultra Deluxe Ultimate Edition geladen 
 // --- In das zentrale BridgeHub registrieren (permission-gefiltert) ---
 import { hub as _bridgeHub } from "./hubAPI.js";
 try {
-  _bridgeHub.register({ id: "ranks", title: "🎖️ Ränge", icon: "textures/items/name_tag", category: "Verwaltung", order: 10, permission: settings.admin_tag, handler: p => openMainMenu(p) });
+  _bridgeHub.register({ id: "ranks", title: "🎖️ Ränge", icon: "textures/items/name_tag", category: "Verwaltung", order: 10, permission: settings.admin_tag, handler: openMainMenu });
   console.warn("[chatRankManager] im Hub registriert");
 } catch (e) { console.warn("[chatRankManager] hub-reg Fehler: " + e); }

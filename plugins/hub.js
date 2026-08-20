@@ -49,7 +49,8 @@ async function openHub(player) {
   const r = await show(player, f);
   if (r.canceled) return;
   const it = items[r.selection];
-  if (it && it.handler) { try { it.handler(player); } catch (e) { player.sendMessage("§cFehler: " + e); } }
+  // Verzögert: das Hub-Formular muss erst schließen, bevor das Plugin sein eigenes öffnet (sonst UserBusy).
+  if (it && it.handler) system.runTimeout(() => { try { Promise.resolve(it.handler(player)).catch(e => player.sendMessage("§cFehler: " + e)); } catch (e) { player.sendMessage("§cFehler: " + e); } }, 8);
 }
 
 /* ================= Kern-Handler ================= */

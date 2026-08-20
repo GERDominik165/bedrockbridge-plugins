@@ -673,6 +673,6 @@ function openCreditsUI(pl) {
 // --- In das zentrale BridgeHub registrieren ---
 import { hub as _bridgeHub } from "./hubAPI.js";
 try {
-  _bridgeHub.register({ id: "scoreboard", title: "📋 Scoreboard", icon: "textures/ui/icon_book_writable", category: "Anzeige", order: 20, handler: p => showMainMenu(p) });
+  _bridgeHub.register({ id: "scoreboard", title: "📋 Scoreboard", icon: "textures/ui/icon_book_writable", category: "Anzeige", order: 20, handler: showMainMenu });
   console.warn("[scoreboard] im Hub registriert");
 } catch (e) { console.warn("[scoreboard] hub-reg: " + e); }
